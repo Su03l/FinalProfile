@@ -817,6 +817,9 @@ p {
   margin-bottom: 20px;
   border-left: 4px solid #000;
 }
+.certification-item > div {
+  background: #212121 !important;
+}
 
 .cert-title {
   font-size: 1.2rem;
