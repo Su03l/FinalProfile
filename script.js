@@ -1,14 +1,14 @@
 // --- Contact Section Dropdown Logic ---
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   // Contact Email Dropdown
   const contactEmailTrigger = document.querySelector(".contact-email-trigger");
   const contactEmailItem = document.querySelector(".contact-email-item");
   if (contactEmailTrigger && contactEmailItem) {
-    contactEmailTrigger.addEventListener("click", function (e) {
+    contactEmailTrigger.addEventListener("click", (e) => {
       e.preventDefault();
       contactEmailItem.classList.toggle("show-dropdown");
     });
-    document.addEventListener("click", function (e) {
+    document.addEventListener("click", (e) => {
       if (!contactEmailItem.contains(e.target)) {
         contactEmailItem.classList.remove("show-dropdown");
       }
@@ -19,30 +19,66 @@ document.addEventListener("DOMContentLoaded", function () {
   const contactPhoneTrigger = document.querySelector(".contact-phone-trigger");
   const contactPhoneItem = document.querySelector(".contact-phone-item");
   if (contactPhoneTrigger && contactPhoneItem) {
-    contactPhoneTrigger.addEventListener("click", function (e) {
+    contactPhoneTrigger.addEventListener("click", (e) => {
       e.preventDefault();
       contactPhoneItem.classList.toggle("show-dropdown");
     });
-    document.addEventListener("click", function (e) {
+    document.addEventListener("click", (e) => {
       if (!contactPhoneItem.contains(e.target)) {
         contactPhoneItem.classList.remove("show-dropdown");
       }
     });
   }
+
+  // Dark/Light theme toggle
+  const themeSwitch = document.getElementById("switch");
+  function setTheme(isDark) {
+    if (isDark) {
+      document.body.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark-theme");
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Initialize theme based on localStorage or system preference
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (savedTheme === "dark" || (savedTheme === null && prefersDark)) {
+    if (themeSwitch) {
+      themeSwitch.checked = true;
+    }
+    setTheme(true);
+  } else {
+    if (themeSwitch) {
+      themeSwitch.checked = false;
+    }
+    setTheme(false);
+  }
+
+  if (themeSwitch) {
+    themeSwitch.addEventListener("change", function () {
+      setTheme(this.checked);
+    });
+  }
 });
 // --- Footer Dropdown Logic ---
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   // Footer Email Dropdown
   const footerEmailTrigger = document.querySelector(".footer-email-trigger");
   const footerEmailDropdown = document.querySelector(
     ".footer-email-item .footer-contact-dropdown"
   );
   if (footerEmailTrigger && footerEmailDropdown) {
-    footerEmailTrigger.addEventListener("click", function (e) {
+    footerEmailTrigger.addEventListener("click", (e) => {
       e.preventDefault();
       footerEmailDropdown.classList.toggle("show");
     });
-    document.addEventListener("click", function (e) {
+    document.addEventListener("click", (e) => {
       if (
         !footerEmailDropdown.contains(e.target) &&
         !footerEmailTrigger.contains(e.target)
@@ -58,11 +94,11 @@ document.addEventListener("DOMContentLoaded", function () {
     ".footer-phone-item .footer-contact-dropdown"
   );
   if (footerPhoneTrigger && footerPhoneDropdown) {
-    footerPhoneTrigger.addEventListener("click", function (e) {
+    footerPhoneTrigger.addEventListener("click", (e) => {
       e.preventDefault();
       footerPhoneDropdown.classList.toggle("show");
     });
-    document.addEventListener("click", function (e) {
+    document.addEventListener("click", (e) => {
       if (
         !footerPhoneDropdown.contains(e.target) &&
         !footerPhoneTrigger.contains(e.target)
@@ -75,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Main JavaScript file for portfolio website functionality
 
 // DOM Content Loaded Event Listener
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   // Initialize all functionality when DOM is fully loaded
   initializeNavigation();
   initializeSkillBars();
@@ -84,13 +120,13 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeScrollEffects();
 
   // Add a small delay to ensure all elements are rendered
-  setTimeout(function () {
+  setTimeout(() => {
     animateSkillBars();
   }, 500);
 });
 
 // Ensure skill bars are visible even if animation fails
-window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".skill-progress").forEach((bar) => {
     const targetWidth = bar.getAttribute("data-width");
     bar.style.width = targetWidth;
@@ -105,7 +141,7 @@ function initializeNavigation() {
 
   // Toggle mobile menu
   if (hamburger) {
-    hamburger.addEventListener("click", function () {
+    hamburger.addEventListener("click", () => {
       navMenu.classList.toggle("active");
       hamburger.classList.toggle("active");
     });
@@ -113,7 +149,7 @@ function initializeNavigation() {
 
   // Close mobile menu when clicking on nav links
   navLinks.forEach((link) => {
-    link.addEventListener("click", function () {
+    link.addEventListener("click", () => {
       if (navMenu.classList.contains("active")) {
         navMenu.classList.remove("active");
         hamburger.classList.remove("active");
@@ -124,8 +160,8 @@ function initializeNavigation() {
   // Always set navbar background to white
   const navbar = document.querySelector(".navbar");
   if (navbar) {
-    navbar.style.backgroundColor = "#fff";
-    navbar.style.boxShadow = "none";
+    navbar.style.backgroundColor = "rgba(35,35,35,0.85)"; // Reverted to original
+    navbar.style.boxShadow = "0 8px 32px 0 rgba(0,0,0,0.25)"; // Reverted to original
   }
 }
 
@@ -286,7 +322,7 @@ function initializeContactForm() {
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
+    contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
       // Get form data
@@ -420,9 +456,9 @@ function initializeScrollEffects() {
 
   // Throttled scroll listener for performance
   let ticking = false;
-  window.addEventListener("scroll", function () {
+  window.addEventListener("scroll", () => {
     if (!ticking) {
-      requestAnimationFrame(function () {
+      requestAnimationFrame(() => {
         updateActiveNavLink();
         ticking = false;
       });
@@ -462,9 +498,9 @@ function throttle(func, limit) {
   let inThrottle;
   return function () {
     const args = arguments;
-    const context = this;
+
     if (!inThrottle) {
-      func.apply(context, args);
+      func.apply(this, args);
       inThrottle = true;
       setTimeout(() => (inThrottle = false), limit);
     }
@@ -472,7 +508,7 @@ function throttle(func, limit) {
 }
 
 // Add loading animation for the page
-window.addEventListener("load", function () {
+window.addEventListener("load", () => {
   // Hide any loading spinner if you have one
   const loader = document.querySelector(".loader");
   if (loader) {
@@ -486,7 +522,7 @@ window.addEventListener("load", function () {
 // Handle window resize events
 window.addEventListener(
   "resize",
-  throttle(function () {
+  throttle(() => {
     // Close mobile menu on resize to larger screen
     const navMenu = document.querySelector(".nav-menu");
     const hamburger = document.querySelector(".hamburger");
@@ -501,7 +537,7 @@ window.addEventListener(
 );
 
 // Keyboard navigation support
-document.addEventListener("keydown", function (e) {
+document.addEventListener("keydown", (e) => {
   // Close mobile menu with Escape key
   if (e.key === "Escape") {
     const navMenu = document.querySelector(".nav-menu");
