@@ -353,7 +353,7 @@ function initializeContactForm() {
 
       // Simulate form submission (replace with actual form handling)
       setTimeout(() => {
-        alert("Thank you for your message! I will get back to you soon.");
+        alert("Oh no! This feature is not available yet. try to contact me on my email: Sulimany662@gmail.com");
         contactForm.reset();
 
         // Reset button
