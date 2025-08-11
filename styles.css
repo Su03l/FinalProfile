@@ -3,6 +3,402 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #ffffff;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+.container {
+  max-width: 100%;
+  margin: 0;
+  padding: 0 70px;
+}
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.btn-primary {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary:hover {
+  background-color: #333;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #000;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-secondary:hover {
+  background-color: #000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ==================== NAVBAR ==================== */
+/* Section-title lines color for dark/light theme */
+body.dark-theme .section-title::before,
+body.dark-theme .section-title::after {
+  background: #fff !important;
+}
+body:not(.dark-theme) .section-title::before,
+body:not(.dark-theme) .section-title::after {
+  background: #000 !important;
+}
+body.dark-theme .section-title,
+body.dark-theme .section-title span,
+body.dark-theme .section-title strong,
+body.dark-theme .section-title em,
+body.dark-theme .section-title a {
+  color: #fff !important;
+}
+body:not(.dark-theme) .section-title,
+body:not(.dark-theme) .section-title span,
+body:not(.dark-theme) .section-title strong,
+body:not(.dark-theme) .section-title em,
+body:not(.dark-theme) .section-title a {
+  color: #000 !important;
+}
+body.dark-theme .section-divider {
+  background: #fff !important;
+}
+body:not(.dark-theme) .section-divider {
+  background: #000 !important;
+}
+body.dark-theme .nav-link,
+body.dark-theme .nav-link:visited,
+body.dark-theme .nav-link:active {
+  color: #fff !important;
+}
+body:not(.dark-theme) .nav-link,
+body:not(.dark-theme) .nav-link:visited,
+body:not(.dark-theme) .nav-link:active {
+  color: #000 !important;
+}
+body.dark-theme .nav-link::after {
+  background: #fff !important;
+}
+body:not(.dark-theme) .nav-link::after {
+  background: #000 !important;
+}
+body.dark-theme .section-divider {
+  background: #fff !important;
+}
+body:not(.dark-theme) .section-divider {
+  background: #000 !important;
+}
+/* ...existing code... */
+/* -------------------- Responsive: Mobile (max-width: 800px) -------------------- */
+@media (max-width: 800px) {
+  html, body {
+    overflow-x: hidden !important;
+  }
+  .navbar, .nav-menu, .nav-menu.active {
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    box-sizing: border-box;
+  }
+  .nav-menu {
+    overflow-x: hidden !important;
+  }
+  .work-certifications-row {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 24px;
+  }
+  .cert-card {
+    width: 100%;
+    max-width: 440px;
+    min-width: unset;
+    margin-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .certifications-grid {
+    width: 100%;
+    min-width: unset;
+  }
+  .certifications-section {
+    flex-direction: column-reverse !important;
+    align-items: center;
+    gap: 24px;
+  }
+}
+/* -------------------- Scrollbar: Certifications Grid -------------------- */
+.certifications-grid {
+  scrollbar-color: #bbb #fff;
+}
+@media (pointer: fine) {
+  .certifications-grid::-webkit-scrollbar {
+    background: #fff;
+  }
+  .certifications-grid::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 8px;
+    border: 2px solid #fff;
+  }
+  .certifications-grid::-webkit-scrollbar-track {
+    background: #fff;
+  }
+}
+
+:root[data-theme="dark"] .certifications-grid {
+  scrollbar-color: #444 #222;
+}
+@media (pointer: fine) {
+  :root[data-theme="dark"] .certifications-grid::-webkit-scrollbar {
+    background: #222;
+  }
+  :root[data-theme="dark"] .certifications-grid::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 8px;
+    border: 2px solid #222;
+  }
+  :root[data-theme="dark"] .certifications-grid::-webkit-scrollbar-track {
+    background: #222;
+  }
+}
+/* Work Experience Section Modern Style */
+.work-experience-section {
+  margin: 40px 0 32px 0;
+}
+.work-experience-title {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  border-bottom: 2.5px solid #2C2C2C;
+  padding-bottom: 0.4rem;
+  letter-spacing: 0.5px;
+}
+/* -------------------- Work Experience Section -------------------- */
+.work-experience-section {
+  margin: 40px 0 32px 0;
+}
+.work-experience-title {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  border-bottom: 2.5px solid #2C2C2C;
+  padding-bottom: 0.4rem;
+  letter-spacing: 0.5px;
+}
+.work-experience-coming-soon {
+  background: #2C2C2C;
+  border-radius: 10px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 32px 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  border: 1px solid #333;
+  letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.work-experience-coming-soon h3 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.work-experience-coming-soon p {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  margin: 0;
+}
+.work-experience-coming-soon.modern {
+  background: var(--background-secondary);
+  border-radius: 14px;
+  padding: 32px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(26,26,26,0.06);
+}
+  /* background: #777;
+} */
+
+/* Certification Styles */
+.certification-item {
+  background: #2C2C2C;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.certification-item:hover {
+  transform: translateY(-3px);
+}
+
+.certification-item h4 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+/* Work Experience Coming Soon Style */
+.work-experience-coming-soon {
+  background: var(--background-secondary);
+  border-radius: 14px;
+  padding: 32px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(26,26,26,0.06);
+}
+
+/* Certifications Section Modern Scrollable Style */
+.certifications-section {
+  background: linear-gradient(135deg, var(--background-secondary) 80%, #e5e7eb 100%);
+  border-radius: 16px;
+  padding: 32px 0 40px 0;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 8px rgba(26,26,26,0.06);
+}
+
+.certifications-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--primary-color);
+}
+
+.certifications-grid {
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Custom Scrollbar for Certifications */
+.certifications-grid::-webkit-scrollbar {
+  width: 8px;
+  background: var(--background-secondary);
+  border-radius: 4px;
+}
+.certifications-grid::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+.certifications-grid::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+  border-radius: 4px;
+}
+
+/* For Firefox */
+.certifications-grid {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--background-secondary);
+}
+
+.cert-card {
+  width: 650px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(26,26,26,0.10);
+  padding: 20px 24px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: box-shadow 0.2s;
+}
+.cert-card:hover {
+  box-shadow: 0 4px 16px rgba(26,26,26,0.12);
+}
+.cert-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.cert-card-provider {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.cert-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+.cert-card-year {
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  background: var(--background-secondary);
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -294,16 +690,155 @@ p {
     display: flex;
   }
   .nav-container {
-    padding: 0 15px;
+    padding: 0 10px;
   }
   .logo-name {
     font-size: 16px;
   }
   .navbar {
-    top: 8px;
-    width: 98vw;
-    border-radius: 12px;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 16px;
+    margin: 14px auto 0 auto;
+    transform: none;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    background: rgba(255,255,255,0.97);
+    z-index: 3000;
+    padding: 0 10px;
+    position: fixed;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 0;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+  .logo-initials, .logo-name {
+    margin-left: 0;
+    text-align: left;
+  }
+  .toggle {
+    margin-left: auto;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+  }
+  /* Add margin-top to profile image */
+  .profile-img {
+    margin-top: 18px;
+  }
+  /* Soft skills: 2 items per row on mobile */
+  .soft-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 15px;
+    width: 100%;
+  }
+  .soft-skill-item {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  /* Center last item if odd */
+  .soft-skill-item:last-child:nth-child(odd) {
+    grid-column: 1 / span 2;
+    justify-content: center;
+  }
+  .nav-menu.active {
+    top: 64px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    transform: none !important;
+    border-radius: 0 0 16px 16px !important;
+    margin: 0 auto !important;
+    padding: 20px 0 !important;
+  }
+  /* Make all text in edu, cert, work smaller */
+  .education-block,
+  .education-title,
+  .education-details,
+  .education-degree,
+  .education-university,
+  .education-meta,
+  .work-block,
+  .work-title,
+  .work-details,
+  .work-item-title,
+  .work-item-description,
+  .work-experience-section,
+  .certifications-block,
+  .certifications-section,
+  .certifications-title,
+  .certifications-details,
+  .certification-item,
+  .cert-title,
+  .cert-meta,
+  .cert-year,
+  .cert-provider,
+  .cert-description,
+  .cert-card,
+  .cert-card-title,
+  .cert-card-provider,
+  .cert-card-desc,
+  .cert-card-year {
+    font-size: 0.93rem !important;
+    line-height: 1.5 !important;
+  }
+  .work-title,
+  .certifications-title,
+  .education-title {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+  }
+  /* Cert and Work blocks: full width, padding, spacing */
+  .cert-card,
+  .work-block,
+  .certifications-block {
+    width: 100% !important;
+    max-width: 98vw !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    padding: 14px 8px !important;
+    border-radius: 12px !important;
+    margin-bottom: 18px !important;
+  }
+  .work-experience-section,
+  .certifications-section {
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .certifications-grid {
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
@@ -888,8 +1423,7 @@ p {
 }
 
 .soft-skill-item:hover {
-  border-color: #1a1a1a;
-  background-color: #1a1a1a;
+  background-color: #4c4c4c;
   color: #fff;
   transform: translateY(-3px);
 }
@@ -2474,7 +3008,7 @@ p {
   font-size: 2rem;
   font-weight: 700;
   color: #000;
-  margin-bottom: 18px;
+  margin-bottom: 32px;
   text-align: center;
 }
 
@@ -2672,6 +3206,10 @@ button.learn-more .circle .icon {
   bottom: 0;
   margin: auto;
   background: #fff;
+}
+body.dark-theme .cert-card,
+html.dark-theme .cert-card {
+  background: #2C2C2C !important;
 }
 
 button.learn-more .circle .icon.arrow {
