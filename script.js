@@ -334,14 +334,14 @@ function initializeContactForm() {
 
       // Basic form validation
       if (!name || !email || !subject || !message) {
-        alert("Please fill in all fields.");
+        showCustomAlert("Please fill in all fields.", "error");
         return;
       }
 
       // Email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
+        showCustomAlert("Please enter a valid email address.", "error");
         return;
       }
 
@@ -353,204 +353,245 @@ function initializeContactForm() {
 
       // Simulate form submission (replace with actual form handling)
       setTimeout(() => {
-        alert("Oh no! This feature is not available yet. try to contact me on my email: Sulimany662@gmail.com");
+        showCustomAlert(
+          "Oh no! This feature is not available yet.<br>Try to contact me on my email:<br><b>Sulimany662@gmail.com</b>",
+          "info"
+        );
         contactForm.reset();
 
         // Reset button
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
       }, 2000);
-
-      // In a real implementation, you would send the data to your server
-      // Example:
-      // fetch('/contact', {
-      //     method: 'POST',
-      //     body: formData
-      // }).then(response => {
-      //     // Handle response
-      // });
     });
   }
 }
 
-// Smooth scrolling for navigation links
-function initializeSmoothScrolling() {
-  const navLinks = document.querySelectorAll(".nav-link");
+// Custom Alert Function
+function showCustomAlert(message, type = "info") {
+  const alertBox = document.getElementById("customAlert");
+  const alertMsg = document.getElementById("customAlertMessage");
+  const alertIcon = alertBox.querySelector(".custom-alert-icon i");
+  if (!alertBox || !alertMsg || !alertIcon) return;
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
+  alertMsg.innerHTML = message;
+  alertBox.style.display = "flex";
 
-      // Check if it's an internal link
-      if (href.startsWith("#")) {
-        e.preventDefault();
+  // Set icon and color
+  if (type === "error") {
+    alertIcon.className = "fas fa-exclamation-circle";
+    alertIcon.style.color = "#e74c3c";
+  } else {
+    alertIcon.className = "fas fa-info-circle";
+    alertIcon.style.color = "#0078ff";
+  }
 
-        const targetSection = document.querySelector(href);
-        if (targetSection) {
-          const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
+  // Close button
+  const closeBtn = document.getElementById("customAlertClose");
+  if (closeBtn) {
+    closeBtn.onclick = function () {
+      alertBox.style.display = "none";
+    };
+  }
 
-          window.scrollTo({
-            top: offsetTop,
-            behavior: "smooth",
-          });
-        }
-      }
-    });
-  });
+  // Close on outside click
+  alertBox.onclick = function (e) {
+    if (e.target === alertBox) {
+      alertBox.style.display = "none";
+    }
+  };
 
-  // Smooth scrolling for buttons that link to sections
-  const actionButtons = document.querySelectorAll(".btn");
-  actionButtons.forEach((button) => {
-    button.addEventListener("click", function (e) {
-      const buttonText = this.textContent.toLowerCase();
+  // Close on Escape key
+  document.onkeydown = function (e) {
+    if (e.key === "Escape") {
+      alertBox.style.display = "none";
+      document.onkeydown = null;
+    }
+  };
 
-      if (buttonText.includes("view work") || buttonText.includes("hire me")) {
-        e.preventDefault();
+  // Smooth scrolling for navigation links
+  function initializeSmoothScrolling() {
+    const navLinks = document.querySelectorAll(".nav-link");
 
-        let targetSection;
-        if (buttonText.includes("view work")) {
-          targetSection = document.querySelector("#projects");
-        } else if (buttonText.includes("hire me")) {
-          targetSection = document.querySelector("#contact");
-        }
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
 
-        if (targetSection) {
-          const offsetTop = targetSection.offsetTop - 70;
-          window.scrollTo({
-            top: offsetTop,
-            behavior: "smooth",
-          });
-        }
-      }
-    });
-  });
-}
+        // Check if it's an internal link
+        if (href.startsWith("#")) {
+          e.preventDefault();
 
-// Scroll effects and animations
-function initializeScrollEffects() {
-  // Active navigation link highlighting
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
+          const targetSection = document.querySelector(href);
+          if (targetSection) {
+            const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
 
-  function updateActiveNavLink() {
-    const scrollPosition = window.scrollY + 100;
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute("id");
-
-      if (
-        scrollPosition >= sectionTop &&
-        scrollPosition < sectionTop + sectionHeight
-      ) {
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === `#${sectionId}`) {
-            link.classList.add("active");
+            window.scrollTo({
+              top: offsetTop,
+              behavior: "smooth",
+            });
           }
-        });
-      }
-    });
-  }
-
-  // Throttled scroll listener for performance
-  let ticking = false;
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        updateActiveNavLink();
-        ticking = false;
+        }
       });
-      ticking = true;
-    }
-  });
-
-  // Intersection Observer for fade-in animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  };
-
-  const fadeInObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
     });
-  }, observerOptions);
 
-  // Apply fade-in animation to various elements
-  const fadeElements = document.querySelectorAll(
-    ".stat-card, .service-card, .project-card, .contact-item"
-  );
-  fadeElements.forEach((element) => {
-    element.style.opacity = "0";
-    element.style.transform = "translateY(30px)";
-    element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    fadeInObserver.observe(element);
-  });
-}
+    // Smooth scrolling for buttons that link to sections
+    const actionButtons = document.querySelectorAll(".btn");
+    actionButtons.forEach((button) => {
+      button.addEventListener("click", function (e) {
+        const buttonText = this.textContent.toLowerCase();
 
-// Utility function to throttle function calls for performance
-function throttle(func, limit) {
-  let inThrottle;
-  return function () {
-    const args = arguments;
+        if (
+          buttonText.includes("view work") ||
+          buttonText.includes("hire me")
+        ) {
+          e.preventDefault();
 
-    if (!inThrottle) {
-      func.apply(this, args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
-    }
-  };
-}
+          let targetSection;
+          if (buttonText.includes("view work")) {
+            targetSection = document.querySelector("#projects");
+          } else if (buttonText.includes("hire me")) {
+            targetSection = document.querySelector("#contact");
+          }
 
-// Add loading animation for the page
-window.addEventListener("load", () => {
-  // Hide any loading spinner if you have one
-  const loader = document.querySelector(".loader");
-  if (loader) {
-    loader.style.display = "none";
+          if (targetSection) {
+            const offsetTop = targetSection.offsetTop - 70;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: "smooth",
+            });
+          }
+        }
+      });
+    });
   }
 
-  // Add loaded class to body for any CSS animations
-  document.body.classList.add("loaded");
-});
+  // Scroll effects and animations
+  function initializeScrollEffects() {
+    // Active navigation link highlighting
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
 
-// Handle window resize events
-window.addEventListener(
-  "resize",
-  throttle(() => {
-    // Close mobile menu on resize to larger screen
-    const navMenu = document.querySelector(".nav-menu");
-    const hamburger = document.querySelector(".hamburger");
+    function updateActiveNavLink() {
+      const scrollPosition = window.scrollY + 100;
 
-    if (window.innerWidth > 768) {
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute("id");
+
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${sectionId}`) {
+              link.classList.add("active");
+            }
+          });
+        }
+      });
+    }
+
+    // Throttled scroll listener for performance
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateActiveNavLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const fadeInObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    }, observerOptions);
+
+    // Apply fade-in animation to various elements
+    const fadeElements = document.querySelectorAll(
+      ".stat-card, .service-card, .project-card, .contact-item"
+    );
+    fadeElements.forEach((element) => {
+      element.style.opacity = "0";
+      element.style.transform = "translateY(30px)";
+      element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      fadeInObserver.observe(element);
+    });
+  }
+
+  // Utility function to throttle function calls for performance
+  function throttle(func, limit) {
+    let inThrottle;
+    return function () {
+      const args = arguments;
+
+      if (!inThrottle) {
+        func.apply(this, args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
+      }
+    };
+  }
+
+  // Add loading animation for the page
+  window.addEventListener("load", () => {
+    // Hide any loading spinner if you have one
+    const loader = document.querySelector(".loader");
+    if (loader) {
+      loader.style.display = "none";
+    }
+
+    // Add loaded class to body for any CSS animations
+    document.body.classList.add("loaded");
+  });
+
+  // Handle window resize events
+  window.addEventListener(
+    "resize",
+    throttle(() => {
+      // Close mobile menu on resize to larger screen
+      const navMenu = document.querySelector(".nav-menu");
+      const hamburger = document.querySelector(".hamburger");
+
+      if (window.innerWidth > 768) {
+        if (navMenu.classList.contains("active")) {
+          navMenu.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
+      }
+    }, 250)
+  );
+
+  // Keyboard navigation support
+  document.addEventListener("keydown", (e) => {
+    // Close mobile menu with Escape key
+    if (e.key === "Escape") {
+      const navMenu = document.querySelector(".nav-menu");
+      const hamburger = document.querySelector(".hamburger");
+
       if (navMenu.classList.contains("active")) {
         navMenu.classList.remove("active");
         hamburger.classList.remove("active");
       }
     }
-  }, 250)
-);
+  });
 
-// Keyboard navigation support
-document.addEventListener("keydown", (e) => {
-  // Close mobile menu with Escape key
-  if (e.key === "Escape") {
-    const navMenu = document.querySelector(".nav-menu");
-    const hamburger = document.querySelector(".hamburger");
+  // Console log for developers
+  console.log("Suleiman Yousef Portfolio Website");
+  console.log("Developed with HTML, CSS, and JavaScript");
 
-    if (navMenu.classList.contains("active")) {
-      navMenu.classList.remove("active");
-      hamburger.classList.remove("active");
-    }
-  }
-});
-
-// Console log for developers
-console.log("Suleiman Yousef Portfolio Website");
-console.log("Developed with HTML, CSS, and JavaScript");
-console.log("For any questions, contact: Sulimany662@gmail.com");
+  console.log("For any questions, contact: Sulimany662@gmail.com");
+}
