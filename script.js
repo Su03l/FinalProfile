@@ -61,6 +61,27 @@ function simulateLoader() {
     progressText.textContent = `${progress}%`;
   }, 50);
 }
+const sections = document.querySelectorAll("section"); // كل السكشنات عندك
+const navLi = document.querySelectorAll(".nav-links li a"); // روابط الـ navbar
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLi.forEach((li) => {
+    li.classList.remove("active"); // نحذف الكلاس من الكل
+    if (li.getAttribute("href") === "#" + current) {
+      li.classList.add("active"); // نضيف الكلاس للسكشن الحالي
+    }
+  });
+});
 
 // Initialize theme toggle functionality
 function initThemeToggle() {
