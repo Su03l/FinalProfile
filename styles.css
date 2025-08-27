@@ -160,8 +160,8 @@ body {
   align-items: center;
   justify-content: center;
   background: rgba(0, 122, 255, 0.1);
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 8px;
   border: 1px solid rgba(0, 122, 255, 0.3);
   transition: all 0.3s ease;
@@ -175,13 +175,13 @@ body {
 }
 
 .logo-sy-text {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #007aff;
 }
 
 .full-name {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #ffffff;
 }
 
@@ -196,6 +196,11 @@ body {
 
 .nav-links li {
   margin: 0 1rem;
+}
+.nav-links li a.active {
+  color: #007aff;
+  font-weight: bold;
+  border-bottom: 2px solid #007aff;
 }
 
 .nav-links a {
@@ -1899,7 +1904,7 @@ body.light-theme .project-link {
 }
 
 .contact-info {
-    space-y: 2rem;
+  space-y: 2rem;
 }
 
 .contact-item {
@@ -2558,10 +2563,39 @@ body.light-theme .footer-bottom {
     display: none;
   }
 }
-
+/* للأجهزة المتوسطة والجوال */
 @media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .chat-container {
+    height: 60vh; /* ضبط ارتفاع صندوق الدردشة */
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .modal {
+    width: 90%;
+  }
+
   .navbar {
-    padding: 1rem 5%;
+    padding: 1rem 3%; /* تصغير الحواف لتناسب الجوال */
+    width: 94%; /* عرض أقل لتجنب الخروج خارج الشاشة */
+    box-sizing: border-box;
   }
 
   .stats-container {
@@ -2612,7 +2646,6 @@ body.light-theme .footer-bottom {
     padding-top: 5rem;
   }
 
-  /* Scroll to top button on mobile */
   .scroll-to-top {
     bottom: 20px;
     right: 20px;
@@ -2620,14 +2653,12 @@ body.light-theme .footer-bottom {
     height: 45px;
   }
 
-  /* Certifications on mobile */
   .certification-item {
     margin: 0.75rem 0 !important;
   }
 
-  /* Responsive design for soft skills on mobile */
   .soft-skills-grid {
-    grid-template-columns: repeat(7, 100px);
+    grid-template-columns: repeat(5, 100px);
     gap: 0.8rem;
   }
 
@@ -2654,6 +2685,7 @@ body.light-theme .footer-bottom {
   }
 }
 
+/* الأجهزة الأصغر */
 @media (max-width: 576px) {
   .about-header {
     margin-bottom: 3rem;
@@ -2712,6 +2744,7 @@ body.light-theme .footer-bottom {
     align-items: flex-start;
     gap: 0.5rem;
   }
+
   .certifications-scroll {
     grid-template-columns: 1fr;
   }
@@ -2724,12 +2757,19 @@ body.light-theme .footer-bottom {
   .contact-details h3 {
     margin-top: 0.5rem;
   }
+
+  /* Navbar أصغر */
+  .navbar {
+    padding: 1rem 2%;
+    width: 96%;
+  }
 }
 
+/* أجهزة الجوال الصغيرة جدًا */
 @media (max-width: 480px) {
   .soft-skills-grid {
-    grid-template-columns: repeat(7, 90px);
-    gap: 0.6rem;
+    grid-template-columns: repeat(4, 90px);
+    gap: 0.5rem;
   }
 
   .soft-skill-card {
@@ -2749,6 +2789,12 @@ body.light-theme .footer-bottom {
   .soft-skill-back p {
     font-size: 0.6rem;
     line-height: 1.2;
+  }
+
+  /* Navbar كامل الشاشة مع حواف صغيرة */
+  .navbar {
+    padding: 0.8rem 3%;
+    width: 94%;
   }
 }
 
