@@ -1315,7 +1315,7 @@ body:not(.home-page) .lines .line::after {
 
 .download-cv-btn {
   background-color: transparent;
-  color: #007aff;
+  color: #ffffffbb;
   border: 1px solid #007aff;
 }
 
