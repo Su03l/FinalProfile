@@ -6,1005 +6,1142 @@
     <title>Suliman Yousef - Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="img/logo.png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Tajawal:wght@200;300;400;500;700;800;900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Navigation Bar Section -->
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <span class="logo-initials">SY</span>
-                    <span class="logo-name">Suliman Yousef</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#resume" class="nav-link">Resume</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="theme-toggle-container">
-                    <label for="switch" class="toggle">
-                        <input type="checkbox" class="input" id="switch" />
-                        <div class="icon icon--moon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
-                                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                        <div class="icon icon--sun">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
-                                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"></path>
-                            </svg>
-                        </div>
-                    </label>
-                </div>
-                <div class="hamburger" id="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+<body class="dark-theme">
+    <!-- Initial Loader -->
+    <div class="loader-container" id="loader">
+        <div class="loader-content">
+            <div class="logo-loader">
+                <div class="logo-border">
+                    <img src="img/avatar.jpg" alt="Suliman Yousef" class="loader-avatar">
                 </div>
             </div>
-        </nav>
+            <div class="loader-name">Suliman Yousef</div>
+            <div class="loader-title">Software Engineering</div>
+            
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="progress-text">
+                <span>Loading</span>
+                <span>0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+<div id="main-content">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
+        <div class="logo" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">
+            <a href="#home" class="logo-link">
+                <div class="logo-sy">
+                    <span class="logo-sy-text">SY</span>
+                </div>
+                <span class="full-name">Suliman Yousef</span>
+            </a>
+        </div>
+
+        <ul class="nav-links" data-aos="fade-down" data-aos-duration="800" data-aos-delay="400">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-right" data-aos="fade-down" data-aos-duration="800" data-aos-delay="500">
+            <label class="theme">
+                <input type="checkbox" class="input" id="theme-toggle">
+                <svg class="icon icon-sun" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" x2="12" y1="1" y2="3"></line>
+                    <line x1="12" x2="12" y1="21" y2="23"></line>
+                    <line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+                    <line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+                    <line x1="1" x2="3" y1="12" y2="12"></line>
+                    <line x1="21" x2="23" y1="12" y2="12"></line>
+                    <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+                    <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+                </svg>
+                <svg class="icon icon-moon" viewBox="0 0 24 24">
+                    <path d="m12.3 4.9c.4-.2.6-.7.5-1.1s-.6-.8-1.1-.8c-4.9.1-8.7 4.1-8.7 9 0 5 4 9 9 9 3.8 0 7.1-2.4 8.4-5.9.2-.4 0-.9-.4-1.2s-.9-.2-1.2.1c-1 .9-2.3 1.4-3.7 1.4-3.1 0-5.7-2.5-5.7-5.7 0-1.9 1.1-3.8 2.9-4.8zm2.8 12.5c.5 0 1 0 1.4-.1-1.2 1.1-2.8 1.7-4.5 1.7-3.9 0-7-3.1-7-7 0-2.5 1.4-4.8 3.5-6-.7 1.1-1 2.4-1 3.8-.1 4.2 3.4 7.6 7.6 7.6z"></path>
+                </svg>
+            </label>
+
+            <div class="hamburger" data-aos="fade-down" data-aos-duration="800" data-aos-delay="600">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
     <!-- Home Section -->
-        <script>
-    <!-- JS for hamburger menu is now in a separate JS file. -->
-        </script>
-    <section id="home" class="home-section">
-        <!-- Grid Background Design -->
-        <div class="home-grid-bg"></div>
-        
-        <div class="container">
-            <!-- Mobile Avatar Section (shows first on mobile) -->
-            <div class="mobile-avatar-section">
-                <div class="mobile-avatar">
-                    <img src="img/avatar.jpg" alt="Suliman Yousef" class="mobile-profile-img">
+    <section id="home" class="home-content">
+        <h1 class="name" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Suliman Yousef</h1>
+
+        <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+            <div class="loader">
+                <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">I'm a </p>
+                <div class="words" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                    <span class="word">Software Engineering</span>
+                    <span class="word">Web Development</span>
+                    <span class="word">Front-End Development</span>
+                    <span class="word">Back-End Development(soon)</span>
                 </div>
             </div>
-            
-            <div class="home-content">
-                <div class="home-left">
-                    <h1 class="home-name">Suliman Yousef</h1>
-                    <h2 class="home-title">Software Engineering</h2>
-                    <p class="home-description">
-                        Computer Science graduate passionate about Software Engineering and Web Development, 
-                        constantly improving through hands-on projects.
-                    </p>
-                    <div class="home-buttons">
-                                                <a href="#projects" class="button1">
-                                                    View Work
-                                                    <span class="button1__icon-wrapper">
-                                                        <svg class="button1__icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M7.25 14.25L12.25 9.25L7.25 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        </svg>
-                                                        <svg class="button1__icon-svg button1__icon-svg--copy" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M7.25 14.25L12.25 9.25L7.25 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                    </div>
-                    <div class="social-links-home">
-                        <a href="https://github.com/Su03l" class="social-link" target="_blank" rel="noopener" title="GitHub - @Su03l"><i class="fab fa-github"></i><span class="social-label">GitHub - @Su03l</span></a>
-                        <a href="https://www.linkedin.com/in/suliaman-yousef-36265a320" class="social-link" target="_blank" rel="noopener" title="LinkedIn - Suliman Yousef"><i class="fab fa-linkedin"></i><span class="social-label">LinkedIn - Suliman Yousef</span></a>
-                        <a href="https://twitter.com/Su05l" class="social-link" target="_blank" rel="noopener" title="Twitter - @Su05l"><i class="fab fa-twitter"></i><span class="social-label">Twitter - @Su05l</span></a>
-                        <a href="https://su03l.github.io/SulimanYousef-LinkTree/" class="social-link linktree" target="_blank" rel="noopener" title="LinkTree - Suliman Yousef"><i class="fas fa-tree"></i><span class="social-label">LinkTree - Suliman Yousef</span></a>
-                    </div>
-                </div>
-                <div class="home-right">
-                    <div class="profile-image">
-                        <img src="img/avatar.jpg" alt="Suliman Yousef" class="profile-img">
-                    </div>
-                </div>
-            </div>
+        </div>
+
+        <p class="description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+            Computer Science graduate passionate about Software Engineering and Web Development, constantly improving through hands-on projects.
+        </p>
+
+        <a href="#about" class="view-work-btn modern-btn" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
+            <span class="btn-text">View Work</span>
+            <i class="fas fa-arrow-right btn-icon"></i>
+        </a>
+
+        <div class="social-icons" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
+            <a href="https://github.com/Su03l" target="_blank" class="social-icon" data-aos="fade-up" data-aos-duration="800" data-aos-delay="950">
+                <i class="fab fa-github"></i>
+                <span class="social-title">GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/suliaman-yousef-36265a320" target="_blank" class="social-icon" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000">
+                <i class="fab fa-linkedin"></i>
+                <span class="social-title">LinkedIn</span>
+            </a>
+            <a href="https://twitter.com/Su05l" target="_blank" class="social-icon" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1050">
+                <i class="fa-brands fa-twitter"></i>
+                <span class="social-title">Twitter/X</span>
+            </a>
+            <a href="https://suliman-yousef-link-tree.vercel.app/" target="_blank" class="social-icon" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1100">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span class="social-title">Linktree</span>
+            </a>
         </div>
     </section>
 
-    
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <!-- About Header -->
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-subtitle">Software Engineering & Web Development</div>
-            </div>
-            
-            <!-- Statistics Cards -->
-            <div class="stats-container">
-                <div class="stat-card">
-                    <h3 class="stat-number">0+</h3>
-                    <p class="stat-label">Years Experience</p>
-                </div>
-                <div class="stat-card">
-                    <h3 class="stat-number">5+</h3>
-                    <p class="stat-label">Projects Completed</p>
-                </div>
-                <div class="stat-card">
-                    <h3 class="stat-number">10+</h3>
-                    <p class="stat-label">Technologies Mastered</p>
-                </div>
-            </div>
+</div>
 
-            <!-- About Me Content -->
-            <div class="about-content">
-                <div class="about-text">
-                    <h3 class="about-title">About Me</h3>
-                    <p class="about-description">
-                        I am Suliman Yousef, a Computer Science graduate with a strong foundation in software engineering and web development. 
-                        I have a deep passion for technology and enjoy turning ideas into practical digital solutions that create real impact. 
-                        My journey includes working on various projects that enhanced my skills in designing, developing, and maintaining modern web applications. 
-                        I thrive in problem-solving environments and always seek to write clean, efficient, and maintainable code. 
-                        I stay up-to-date with the latest industry trends and constantly challenge myself through learning, building, and collaborating in team-based or independent projects.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Skills and Approach -->
-            <div class="skills-approach-container">
-                <!-- Technical Skills -->
-                <div class="technical-skills">
-                    <h3 class="skills-title" >Technical Skills</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">HTML/CSS</span>
-                            <span class="skill-percentage">95%</span>
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-container">
+                <!-- Header Section - Centered -->
+                <div class="about-header" data-aos="fade-up" data-aos-duration="800">
+                    <h1 class="about-title">About Me</h1>
+                    <p class="about-subtitle">Software Engineering & Web Development</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-box" data-aos="fade-up" data-aos-delay="100">
+                            <span class="stat-number" data-target="0">0+</span>
+                            <span class="stat-label">Years Experience</span>
                         </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="95%"></div>
+                        <div class="stat-box" data-aos="fade-up" data-aos-delay="200">
+                            <span class="stat-number" data-target="5">0+</span>
+                            <span class="stat-label">Projects Completed</span>
                         </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">JavaScript</span>
-                            <span class="skill-percentage">70%</span>
+                        <div class="stat-box" data-aos="fade-up" data-aos-delay="300">
+                            <span class="stat-number" data-target="7">0+</span>
+                            <span class="stat-label">Technologies Mastered</span>
                         </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="70%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">TypeScript - ⏳⏳</span>
-                            <span class="skill-percentage">0%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="0%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">React - ⏳⏳</span>
-                            <span class="skill-percentage">0%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="0%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Next.js - ⏳⏳</span>
-                            <span class="skill-percentage">0%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="0%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Node.js - ⏳⏳</span>
-                            <span class="skill-percentage">0%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="0%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Python</span>
-                            <span class="skill-percentage">40%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="40%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">UI/UX Design</span>
-                            <span class="skill-percentage">60%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="60%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Database Management</span>
-                            <span class="skill-percentage">14%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="14%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Git/GitHub</span>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="90%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- My Approach -->
-                <div class="my-approach">
-                    <h3 class="approach-title">My Approach</h3>
-                    <div class="approach-item">
-                        <div class="approach-icon"><i class="fas fa-cogs"></i></div>
-                        <div class="approach-content">
-                            <h4 class="approach-name">Technology Focus</h4>
-                            <p class="approach-description">Specializing in modern technologies and staying updated with the latest industry trends.</p>
-                        </div>
-                    </div>
-                    <div class="approach-item">
-                        <div class="approach-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div class="approach-content">
-                            <h4 class="approach-name">Innovation</h4>
-                            <p class="approach-description">Creating innovative solutions that combine technical expertise with creative thinking.</p>
-                        </div>
-                    </div>
-                    <div class="approach-item">
-                        <div class="approach-icon"><i class="fas fa-bolt"></i></div>
-                        <div class="approach-content">
-                            <h4 class="approach-name">Efficiency</h4>
-                            <p class="approach-description">Delivering high-quality results with optimal performance and user experience.</p>
-                        </div>
-                    </div>
-                    <div class="approach-item">
-                        <div class="approach-icon"><i class="fas fa-users"></i></div>
-                        <div class="approach-content">
-                            <h4 class="approach-name">Collaboration</h4>
-                            <p class="approach-description">Working effectively with teams to achieve common goals and share knowledge.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume-section">
-        <div class="container">
-            <!-- Resume Header -->
-            <div class="section-header">
-                <h2 class="section-title">Resume</h2>
-                <p class="section-subtitle">My Professional Journey</p>
-                <div class="resume-buttons">
-                    <a class="btn btn-primary" href="SULIMANYOUSEF.pdf" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> View CV</a>
-                    <a class="btn btn-secondary" href="SULIMANYOUSEF.pdf" download><i class="fas fa-download"></i> Download CV</a>
-                </div>
-            </div>
-
-            <div class="resume-content">
-                <div class="education-block">
-                    <div class="education-title-row">
-                        <span class="education-icon"><i class="fas fa-graduation-cap"></i></span>
-                        <h3 class="education-title">Education</h3>
-                    </div>
-                    <div class="education-degree">Bachelor of Computer Science</div>
-                    <div class="education-university">Taibah University</div>
-                    <div class="education-meta">
-                        <span class="education-date"><i class="fas fa-calendar-alt"></i> 2020 - 2025</span>
-                        <span class="education-location"><i class="fas fa-map-marker-alt"></i> Madina - Saudi Arabia</span>
-                    </div>
-                </div>
-                <div class="resume-row">
-                                        <div class="work-certifications-row" style="display: flex; gap: 32px;">
-                                            <!-- Work Experience Card -->
-                                            <div class="work-experience-section" style="flex: 1;">
-                                                <div class="certifications-title-row">
-                                                    <span class="certifications-icon"><i class="fas fa-briefcase"></i></span>
-                                                    <h3 class="certifications-title">Work Experience</h3>
-                                                </div>
-                                                <div class="cert-card">
-                                                    <div class="cert-card-icon"><i class="fas fa-briefcase"></i></div>
-                                                    <div class="cert-card-content">
-                                                        <div class="cert-card-header">
-                                                            <span class="cert-card-title">Work Experience</span>
-                                                        </div>
-                                                        <div class="cert-card-desc">Details of work experience will be added soon.</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Certifications Card List -->
-                                            <div class="certifications-section" style="flex: 1;">
-                                                <div class="certifications-title-row">
-                                                    <span class="certifications-icon"><i class="fas fa-certificate"></i></span>
-                                                    <h3 class="certifications-title">Certifications</h3>
-                                                </div>
-                                                <div class="certifications-grid">
-                                                    <div class="cert-card">
-                                                        <div class="cert-card-icon"><i class="fas fa-globe"></i></div>
-                                                        <div class="cert-card-content">
-                                                            <div class="cert-card-header">
-                                                                <span class="cert-card-title">Web Application Development</span>
-                                                                <span class="cert-card-year">2025</span>
-                                                            </div>
-                                                            <div class="cert-card-provider">Doroob</div>
-                                                            <div class="cert-card-desc">Web app development course with assessments and updated browser skills.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cert-card">
-                                                        <div class="cert-card-icon"><i class="fas fa-layer-group"></i></div>
-                                                        <div class="cert-card-content">
-                                                            <div class="cert-card-header">
-                                                                <span class="cert-card-title">Full Stack Web Developer</span>
-                                                                <span class="cert-card-year">2024</span>
-                                                            </div>
-                                                            <div class="cert-card-provider">Satar</div>
-                                                            <div class="cert-card-desc">HTML, CSS, JavaScript, Git, Node.js, Express, DOM, Bootstrap, MongoDB, API, React.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cert-card">
-                                                        <div class="cert-card-icon"><i class="fab fa-flutter"></i></div>
-                                                        <div class="cert-card-content">
-                                                            <div class="cert-card-header">
-                                                                <span class="cert-card-title">Full Course Flutter App Developer</span>
-                                                                <span class="cert-card-year">2024</span>
-                                                            </div>
-                                                            <div class="cert-card-provider">Satar</div>
-                                                            <div class="cert-card-desc">Dart, Flutter 101-105.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cert-card">
-                                                        <div class="cert-card-icon"><i class="fab fa-android"></i></div>
-                                                        <div class="cert-card-content">
-                                                            <div class="cert-card-header">
-                                                                <span class="cert-card-title">Full Course Android App Developer</span>
-                                                                <span class="cert-card-year">2022</span>
-                                                            </div>
-                                                            <div class="cert-card-provider">Satar</div>
-                                                            <div class="cert-card-desc">Kotlin 101-104, Android 101, SQL 101, Jetpack Compose, Android Firebase.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cert-card">
-                                                        <div class="cert-card-icon"><i class="fas fa-chart-bar"></i></div>
-                                                        <div class="cert-card-content">
-                                                            <div class="cert-card-header">
-                                                                <span class="cert-card-title">Data Analysis Course</span>
-                                                                <span class="cert-card-year">2025</span>
-                                                            </div>
-                                                            <div class="cert-card-provider">Satar</div>
-                                                            <div class="cert-card-desc">SQL 101-103, Python 101-103, NumPy, Pandas, Power BI 101-103.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cert-card">
-                                                        <div class="cert-card-icon"><i class="fas fa-code"></i></div>
-                                                        <div class="cert-card-content">
-                                                            <div class="cert-card-header">
-                                                                <span class="cert-card-title">Web Development Fundamentals</span>
-                                                                <span class="cert-card-year">2025</span>
-                                                            </div>
-                                                            <div class="cert-card-provider">IBM</div>
-                                                            <div class="cert-card-desc">HTML, CSS, JavaScript, web basics, and deployment.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cert-card">
-                                                        <div class="cert-card-icon"><i class="fas fa-pencil-ruler"></i></div>
-                                                        <div class="cert-card-content">
-                                                            <div class="cert-card-header">
-                                                                <span class="cert-card-title">UI/UX Designer Using Figma</span>
-                                                                <span class="cert-card-year">2025</span>
-                                                            </div>
-                                                            <div class="cert-card-provider">Satr</div>
-                                                            <div class="cert-card-desc">UI/UX design principles using Figma.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cert-card">
-                                                        <div class="cert-card-icon"><i class="fas fa-robot"></i></div>
-                                                        <div class="cert-card-content">
-                                                            <div class="cert-card-header">
-                                                                <span class="cert-card-title">Artificial Intelligence Fundamentals</span>
-                                                                <span class="cert-card-year">2025</span>
-                                                            </div>
-                                                            <div class="cert-card-provider">IBM</div>
-                                                            <div class="cert-card-desc">AI concepts, machine learning, deep learning, NLP, computer vision, and AI ethics.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cert-card">
-                                                        <div class="cert-card-icon"><i class="fas fa-tasks"></i></div>
-                                                        <div class="cert-card-content">
-                                                            <div class="cert-card-header">
-                                                                <span class="cert-card-title">Agile Explorers</span>
-                                                                <span class="cert-card-year">2025</span>
-                                                            </div>
-                                                            <div class="cert-card-provider">IBM</div>
-                                                            <div class="cert-card-desc">Certified in Agile Explorer by IBM with foundational knowledge of Agile principles and practical application</div>
-                                                        </div>
-                                                    </div>
-                                                     <div class="cert-card">
-                                                        <div class="cert-card-icon"><i class="fab fa-js"></i></div>
-                                                        <div class="cert-card-content">
-                                                            <div class="cert-card-header">
-                                                                <span class="cert-card-title">JavaScript (Basic)</span>
-                                                                <span class="cert-card-year">2025</span>
-                                                            </div>
-                                                            <div class="cert-card-provider">HackerRank</div>
-                                                            <div class="cert-card-desc">Certified in JavaScript (Basic) by HackerRank,  It covers topics like, Functions, Currying, Hoisting, Scope, Inheritance, Events and Error Handling.</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                </div>
-
-            <!-- Soft Skills -->
-            <div class="soft-skills">
-                <h3 class="soft-skills-title">Soft Skills</h3>
-                <div class="soft-skills-grid">
-                    <div class="soft-skill-item"><span class="soft-skill-inner"><i class="fas fa-users soft-skill-icon"></i><span>Team Work</span></span></div>
-                    <div class="soft-skill-item"><span class="soft-skill-inner"><i class="fas fa-brain soft-skill-icon"></i><span>Critical Thinking</span></span></div>
-                    <div class="soft-skill-item"><span class="soft-skill-inner"><i class="fas fa-sync-alt soft-skill-icon"></i><span>Adaptability</span></span></div>
-                    <div class="soft-skill-item"><span class="soft-skill-inner"><i class="fas fa-clock soft-skill-icon"></i><span>Time Management</span></span></div>
-                    <div class="soft-skill-item"><span style="display:flex; flex-direction:column; align-items:center; justify-content:center;"><i class="fas fa-chess-king" style="font-size:28px; margin-bottom:8px;"></i><span>Leadership</span></span></div>
-                    <div class="soft-skill-item"><span style="display:flex; flex-direction:column; align-items:center; justify-content:center;"><i class="fas fa-lightbulb" style="font-size:28px; margin-bottom:8px;"></i><span>Problem Solving</span></span></div>
-                    <div class="soft-skill-item"><span style="display:flex; flex-direction:column; align-items:center; justify-content:center;"><i class="fas fa-comments" style="font-size:28px; margin-bottom:8px;"></i><span>Communication</span></span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-     <!-- Services Section (Custom) -->
-    <section class="services-section-custom" id="services">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Services</h2>
-        </div>
-        <div class="services-subtitle-custom">Technology Solutions &amp; Expertise</div>
-        <div class="services-cards-custom">
-          <!-- Web Development Card -->
-          <div class="service-card-custom">
-            <div class="service-card-title-custom"><i class="fas fa-code" style="margin-right:8px;"></i>Front-end Development</div>
-            <div class="service-card-desc-custom">
-                Building responsive and interactive user interfaces using HTML, CSS, JavaScript, and React. Creating seamless user experiences with modern front-end technologies.
-            </div>
-            <ul class="service-card-list-custom">
-              <li>Responsive Design</li>
-              <li>Cross-Browser Compatibility</li>
-              <li>Performance Tuning</li>
-              <li>Accessibility</li>
-            </ul>
-          </div>
-          <!-- Backend Development Card -->
-          <div class="service-card-custom">
-            <div class="service-card-title-custom"><i class="fas fa-server" style="margin-right:8px;"></i>Backend Development</div>
-            <div class="service-card-desc-custom">
-              Building robust and scalable server-side applications using Node.js and Express. Designing and developing RESTful APIs and managing databases with PostgreSQL for modern web applications.
-            </div>
-            <ul class="service-card-list-custom">
-              <li>API Development</li>
-              <li>Database Design</li>
-              <li>Authentication &amp; Authorization</li>
-              <li>Cloud Integration</li>
-            </ul>
-          </div>
-          <!-- Software Engineering Design Card -->
-          <div class="service-card-custom">
-            <div class="service-card-title-custom"><i class="fas fa-cogs" style="margin-right:8px;"></i>Software Engineering</div>
-            <div class="service-card-desc-custom">
-                Applying best practices to design, develop, test, and maintain reliable software systems. Emphasizing code quality, scalability, and maintainability throughout the development lifecycle.
-            </div>
-            <ul class="service-card-list-custom">
-              <li>Requirements Analysis</li>
-              <li>Software Architecture</li>
-              <li>Software Architecture</li>
-              <li>Version Control</li>
-            </ul>
-          </div>
-          <!-- UI/UX Design Card -->
-          <div class="service-card-custom">
-            <div class="service-card-title-custom"><i class="fas fa-pencil-ruler" style="margin-right:8px;"></i>UI/UX Design</div>
-            <div class="service-card-desc-custom">
-              User-centered design solutions that combine aesthetics with functionality. From wireframes to high-fidelity prototypes.
-            </div>
-            <ul class="service-card-list-custom">
-              <li>User Research</li>
-              <li>Wireframing</li>
-              <li>Prototyping</li>
-              <li>Design Systems</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <!-- Projects Header -->
-            <div class="section-header">
-                <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">My Creative Journey</p>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/HomePage.png" alt="Smart-life-organizer">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Smart-life-organizer</h3>
-                        <p class="project-description">An intelligent app to help users manage daily habits and organize time via reminders and voice interaction. Change your life by gradually adding new healthy habits and tasks.
-
-</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">Flutter</span>
-                            <span class="tool-tag">Dart</span>
-                            <span class="tool-tag">Python</span>
-                            <span class="tool-tag">FastAPI</span>
-                            <span class="tool-tag">SQL</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://github.com/Su03l/smartLiveOrganizer/tree/master" target="_blank" class="btn btn-primary">View Live</a>
-                            <a href="https://github.com/Su03l/smartLiveOrganizer/tree/master" target="_blank" class="btn btn-secondary">View Code</a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/project2.png" alt="personal Profile">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Personal Profile</h3>
-                        <p class="project-description">This website is created to showcase my personal and professional projects, skills, and experience. It's a central hub for anyone interested in learning more about my work..</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">HTML</span>
-                            <span class="tool-tag">CSS</span>
-                            <span class="tool-tag">Javascript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://suliamanyousef.vercel.app/" target="_blank" class="btn btn-primary">View Live</a>
-                            <a href="https://github.com/Su03l/FinalProfile" target="_blank" class="btn btn-secondary">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/Project2-1.png" alt="3Algorithims">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">3 Algorithm Encryption Tools</h3>
-                        <p class="project-description">A simple website with 3 encryption tools: Morse Code, ROT 13 Cipher, and Atbash Cipher for educational purposes.</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">HTML</span>
-                            <span class="tool-tag">CSS</span>
-                            <span class="tool-tag">JavaScript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://su03l.github.io/MorseRot13Atbash/" target="_blank" class="btn btn-primary">View Live</a>
-                            <a href="https://github.com/Su03l/MorseRot13Atbash" target="_blank" class="btn btn-secondary">View Code</a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/Project4.png" alt="TaskHub">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">TaskHub Platform</h3>
-                        <p class="project-description">TaskHub is a digital platform that helps undergraduate teams manage their graduation projects through task management, progress tracking, and team collaboration tools.</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">HTML</span>
-                            <span class="tool-tag">CSS</span>
-                            <span class="tool-tag">Javascript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://su03l.github.io/TaskHub/" target="_blank" class="btn btn-primary">View Live</a>
-                            <a href="https://github.com/Su03l/TaskHub" target="_blank" class="btn btn-secondary">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/Project5.png" alt="TourismBusiness">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Tourism Business</h3>
-                        <p class="project-description">This website introduces our hotel, showcasing rooms, services, and facilities. Guests can explore amenities, view photos, and book online with ease.</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">HTML</span>
-                            <span class="tool-tag">CSS</span>
-                            <span class="tool-tag">JavaScript</span>
-                            <span class="tool-tag">React</span>
-                            <span class="tool-tag">TypeScript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://rightarm.vercel.app/" target="_blank" class="btn btn-primary">View Live</a>
-                            <a href="https://github.com/Su03l/TourismBusiness" target="_blank" class="btn btn-secondary">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/Project6.png" alt="projexhub">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">ProjexHub</h3>
-                        <p class="project-description">A website dedicated to showcasing graduation projects with interaction between students and supervisors. Platform for sharing and discovering academic projects.</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">HTML</span>
-                            <span class="tool-tag">CSS</span>
-                            <span class="tool-tag">JavaScript</span>
-                            <span class="tool-tag">React</span>
-                            <span class="tool-tag">TypeScript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://su03l.github.io/ProjexHubFinal/index.html" target="_blank" class="btn btn-primary">View Live</a>
-                            <a href="https://github.com/Su03l/ProjexHubFinal" target="_blank" class="btn btn-secondary">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hidden Projects (7-9) -->
-                <div class="project-card hidden-project" style="display:none;">
-                    <div class="project-image">
-                        <img src="img/Project7.png" alt="LinkTree">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Link Tree</h3>
-                        <p class="project-description">This website lets you create a personalized page with multiple links to your social profiles, projects, and other important content—all in one place for easy sharing.</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">HTML</span>
-                            <span class="tool-tag">CSS</span>
-                            <span class="tool-tag">Javascript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://su03l.github.io/SulimanYousef-LinkTree/" target="_blank" class="btn btn-primary">View Live</a>
-                            <a href="https://github.com/Su03l/SulimanYousef-LinkTree" target="_blank" class="btn btn-secondary">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card hidden-project" style="display:none;">
-                    <div class="project-image">
-                        <img src="img/Project8.png" alt="Dlni">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Dlni Platform</h3>
-                        <p class="project-description">The platform aims to assist and guide pilgrims and Umrah performers to facilitate their internal routes to the Prophet's Mosque with maps and instant assistance services.
-
-</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">HTML</span>
-                            <span class="tool-tag">CSS</span>
-                            <span class="tool-tag">Javascript</span>
-                            <span class="tool-tag">React</span>
-                            <span class="tool-tag">TypeScript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://github.com/Su03l/dlni" target="_blank" class="btn btn-primary">View Live</a>
-                            <a href="https://github.com/Su03l/dlni" target="_blank" class="btn btn-secondary">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card hidden-project" style="display:none;">
-                    <div class="project-image">
-                        <img src="img/Project9.png" alt="LawAiChat">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Law AI Chat</h3>
-                        <p class="project-description">This website provides AI-driven legal consultations and lets staff generate and print case reports and memos efficiently.</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">HTML</span>
-                            <span class="tool-tag">CSS</span>
-                            <span class="tool-tag">Javascript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://su03l.github.io/wayer1/" target="_blank" class="btn btn-primary">View Live</a>
-                            <a href="https://github.com/Su03l/wayer1" target="_blank" class="btn btn-secondary">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-<!--                 Project 10 -->
-                <div class="project-card hidden-project" style="display:none;">
-                    <div class="project-image">
-                        <img src="img/project10.png" alt="new project">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Genesis G90 Showcase</h3>
-                        <p class="project-description">Genesis G90 Showcase highlights the 2025 Genesis G90, featuring specs, photos, and videos. Users can contact the team and enjoy smooth navigation.</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">HTML</span>
-                            <span class="tool-tag">CSS</span>
-                            <span class="tool-tag">Javascript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://su03l.github.io/Genesis-G90-2025/" target="_blank" class="btn btn-primary">View Live</a>
-                            <a href="https://github.com/Su03l/Genesis-G90-2025" target="_blank" class="btn btn-secondary">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 11 -->
-                <!-- <div class="project-card hidden-project" style="display:none;">
-                    <div class="project-image">
-                        <img src="https://images.pexels.com/photos/3861965/pexels-photo-3861965.jpeg?auto=compress&cs=tinysrgb&w=400" alt="E-learning Platform">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">E-learning Platform</h3>
-                        <p class="project-description">Online learning management system with video courses and interactive assessments.</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">Laravel</span>
-                            <span class="tool-tag">MySQL</span>
-                            <span class="tool-tag">Vue.js</span>
-                        </div>
-                        <div class="project-buttons">
-                            <button class="btn btn-primary">View Live</button>
-                            <button class="btn btn-secondary">View Code</button>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Project 12 -->
-                <!-- <div class="project-card hidden-project" style="display:none;">
-                    <div class="project-image">
-                        <img src="https://images.pexels.com/photos/3861967/pexels-photo-3861967.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Social Media Dashboard">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Social Media Dashboard</h3>
-                        <p class="project-description">Analytics dashboard for social media management with real-time data visualization.</p>
-                        <div class="project-tools">
-                            <span class="tool-tag">React</span>
-                            <span class="tool-tag">D3.js</span>
-                            <span class="tool-tag">Node.js</span>
-                        </div>
-                        <div class="project-buttons">
-                            <button class="btn btn-primary">View Live</button>
-                            <button class="btn btn-secondary">View Code</button>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-
-            <!-- Show More/Less Buttons -->
-            <div class="button-container">
-                <div class="show-more-container" id="showMoreContainer">
-                    <button class="learn-more" id="showMoreBtn" onclick="showMoreProjects()">
-                        <span class="circle" aria-hidden="true">
-                            <span class="icon arrow"></span>
-                        </span>
-                        <span class="button-text">Show More</span>
-                    </button>
-                </div>
-                <div class="show-less-container" id="showLessContainer" style="display:none;">
-                    <button class="learn-more" id="showLessBtn" onclick="showLessProjects()">
-                        <span class="circle" aria-hidden="true">
-                            <span class="icon arrow"></span>
-                        </span>
-                        <span class="button-text">Show Less</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <!-- Contact Header -->
-            <div class="section-header">
-                <h2 class="section-title">Contact Me</h2>
-                <p class="section-subtitle">Let's Work Together</p>
-                <p class="contact-intro">
-                    I'm always interested in new opportunities and exciting projects. 
-                    Whether you have a question or just want to say hi, feel free to reach out!
-                </p>
-            </div>
-
-            <!-- Contact Content -->
-
-            <div class="contact-content">
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <!-- Email Dropdown -->
-                    <div class="contact-item contact-email-item" style="position:relative;">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4 class="contact-label">Email</h4>
-                            <a href="#" onclick="return false;" class="contact-value contact-email-trigger" tabindex="0" aria-haspopup="true" aria-expanded="false">Sulimany662@gmail.com</a>
-                        </div>
-                        <div class="contact-dropdown" role="menu">
-                            <div class="contact-dropdown-option" onclick="window.location.href='mailto:Sulimany662@gmail.com'">
-                                <i class="fas fa-paper-plane"></i> Send Email
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Phone Dropdown -->
-                    <div class="contact-item contact-phone-item" style="position:relative;">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4 class="contact-label">Phone</h4>
-                            <a href="#" onclick="return false;" class="contact-value contact-phone-trigger" tabindex="0" aria-haspopup="true" aria-expanded="false">+966 59 012 8804</a>
-                        </div>
-                        <div class="contact-dropdown" role="menu">
-                            <div class="contact-dropdown-option" onclick="window.location.href='tel:+966590128804'">
-                                <i class="fas fa-phone-alt"></i> Call Me
-                            </div>
-                            <div class="contact-dropdown-option" onclick="window.open('https://wa.me/966590128804','_blank')">
-                                <i class="fab fa-whatsapp" style="color:#25D366;"></i> Send WhatsApp
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4 class="contact-label">Location</h4>
-                            <p class="contact-value">Medina - Saudi Arabia</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-                <!-- Back to Top Button -->
-                <div style="display: flex; justify-content: center; margin-top: 40px;">
-                    <button class="button" onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'});" title="Back to Top">
-                        <svg class="svgIcon" viewBox="0 0 384 512">
-                            <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
-                        </svg>
-                    </button>
-                </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <div class="footer-logo">
-                        <span class="logo-initials">SY</span>
-                        <span class="logo-name">Suliman Yousef</span>
-                    </div>
-                    <p class="footer-description">
-                        Software Engineer passionate about creating innovative digital solutions.
-                    </p>
-                    <div class="footer-social-links">
-                        <a href="https://github.com/Su03l" class="social-link" target="_blank" rel="noopener" title="GitHub - @Su03l"><i class="fab fa-github"></i><span class="social-label">GitHub - @Su03l</span></a>
-                        <a href="https://www.linkedin.com/in/suliaman-yousef-36265a320" class="social-link" target="_blank" rel="noopener" title="LinkedIn - Suliman Yousef"><i class="fab fa-linkedin"></i><span class="social-label">LinkedIn - Suliman Yousef</span></a>
-                        <a href="https://twitter.com/Su05l" class="social-link" target="_blank" rel="noopener" title="Twitter - @Su05l"><i class="fab fa-twitter"></i><span class="social-label">Twitter - @Su05l</span></a>
-                        <a href="https://su03l.github.io/SulimanYousef-LinkTree/" class="social-link linktree" target="_blank" rel="noopener" title="LinkTree - Suliman Yousef"><i class="fas fa-tree"></i><span class="social-label">LinkTree - Suliman Yousef</span></a>
                     </div>
                 </div>
                 
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4 class="footer-title">Quick Links</h4>
-                        <ul class="footer-menu">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#resume">Resume</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
+                <!-- Content Section - Bio left, Image right -->
+                <div class="about-content">
+                    <div class="bio-text" data-aos="fade-right" data-aos-duration="800">
+                        <p>I am Suliman Yousef, a Computer Science graduate with a strong foundation in software engineering and web development. I have a deep passion for technology and enjoy turning ideas into practical digital solutions that create real impact.</p>
+                        <p>My journey includes working on various projects that enhanced my skills in designing, developing, and maintaining modern web applications. I thrive in problem-solving environments and always seek to write clean, efficient, and maintainable code.</p>
+                        <p>I stay up-to-date with the latest industry trends and constantly challenge myself through learning, building, and collaborating in team-based or independent projects.</p>
                     </div>
                     
-                    <div class="footer-section">
-                        <h4 class="footer-title">Services</h4>
-                        <ul class="footer-menu">
-                            <li><a href="#services">Front-end Development</a></li>
-                            <li><a href="#services">Backend Development</a></li>
-                            <li><a href="#services">Software Engineering</a></li>
-                            <li><a href="#services">UI/UX Design</a></li>
-                        </ul>
+                    <div class="about-image" data-aos="fade-left" data-aos-duration="800">
+                        <img src="img/avatar.jpg" alt="Suliman Yousef" class="avatar">
                     </div>
-                    
-                    <div class="footer-section">
-                        <h4 class="footer-title">Connect</h4>
-                        <div class="footer-contact-info">
-                            <p class="footer-contact-item">
-                                <a href="https://twitter.com/Su05l" class="footer-contact-link" target="_blank" rel="noopener">
-                                    <i class="fab fa-twitter"></i> @su05l
-                                </a>
-                            </p>
-                            <!-- Email Dropdown -->
-                            <div class="footer-contact-item footer-email-item">
-                                <a href="#" onclick="return false;" class="footer-contact-value footer-email-trigger" tabindex="0" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-envelope"></i> Sulimany662@gmail.com
-                                </a>
-                                <div class="footer-contact-dropdown" role="menu">
-                                    <div class="footer-contact-dropdown-option" onclick="window.location.href='mailto:Sulimany662@gmail.com'">
-                                        <i class="fas fa-paper-plane"></i> Send Email
-                                    </div>
-                                </div>
+                </div>
+                
+                <!-- Skills and Approach Section -->
+                <div class="skills-approach-container">
+                    <!-- Technical Skills - Left -->
+                    <div class="skills-container" data-aos="fade-right" data-aos-duration="800">
+                        <h2 class="section-heading">Technical Skills</h2>
+                        
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="skill-name">
+                                <span><i class="fab fa-html5"></i> HTML/CSS</span>
+                                <span class="skill-percentage">95%</span>
                             </div>
-                            <!-- Phone Dropdown -->
-                            <div class="footer-contact-item footer-phone-item">
-                                <a href="#" onclick="return false;" class="footer-contact-value footer-phone-trigger" tabindex="0" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-phone"></i> +966 59 012 8804
-                                </a>
-                                <div class="footer-contact-dropdown" role="menu">
-                                    <div class="footer-contact-dropdown-option" onclick="window.location.href='tel:+966590128804'">
-                                        <i class="fas fa-phone-alt"></i> Call Me
-                                    </div>
-                                    <div class="footer-contact-dropdown-option" onclick="window.open('https://wa.me/966590128804','_blank')">
-                                        <i class="fab fa-whatsapp"></i> Send WhatsApp
-                                    </div>
-                                </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
                             </div>
-                            <p class="footer-contact-item">
-                                <i class="fas fa-map-marker-alt"></i> Medina - Saudi Arabia
-                            </p>
                         </div>
+                        
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                            <div class="skill-name">
+                                <span><i class="fab fa-js-square"></i> JavaScript</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-name">
+                                <span><i class="fas fa-code"></i> TypeScript - ⏳⏳</span>
+                                <span class="skill-percentage">0%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+                            <div class="skill-name">
+                                <span><i class="fab fa-react"></i> React - ⏳⏳</span>
+                                <span class="skill-percentage">0%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="skill-name">
+                                <span><i class="fas fa-bold"></i> Next.js - ⏳⏳</span>
+                                <span class="skill-percentage">0%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="350">
+                            <div class="skill-name">
+                                <span><i class="fab fa-node-js"></i> Node.js - ⏳⏳</span>
+                                <span class="skill-percentage">0%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="skill-name">
+                                <span><i class="fab fa-python"></i> Python</span>
+                                <span class="skill-percentage">20%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="20%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="500">
+                            <div class="skill-name">
+                                <span><i class="fas fa-database"></i> Database Management</span>
+                                <span class="skill-percentage">14%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="14%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="550">
+                            <div class="skill-name">
+                                <span><i class="fab fa-git-alt"></i> Git/GitHub</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- My Approach - Right -->
+                    <div class="approach-container" data-aos="fade-left" data-aos-duration="800">
+                        <h2 class="section-heading">My Approach</h2>
+                        
+                        <div class="approach-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="approach-icon-title">
+                                <div class="approach-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <h3 class="approach-title">Technology Focus</h3>
+                            </div>
+                            <p class="approach-desc">Specializing in modern technologies and staying updated with the latest industry trends.</p>
+                        </div>
+                        
+                        <div class="approach-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="approach-icon-title">
+                                <div class="approach-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h3 class="approach-title">Innovation</h3>
+                            </div>
+                            <p class="approach-desc">Creating innovative solutions that combine technical expertise with creative thinking.</p>
+                        </div>
+                        
+                        <div class="approach-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="approach-icon-title">
+                                <div class="approach-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <h3 class="approach-title">Efficiency</h3>
+                            </div>
+                            <p class="approach-desc">Delivering high-quality results with optimal performance and user experience.</p>
+                        </div>
+                        
+                        <div class="approach-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="approach-icon-title">
+                                <div class="approach-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h3 class="approach-title">Collaboration</h3>
+                            </div>
+                            <p class="approach-desc">Working effectively with teams to achieve common goals and share knowledge.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills Section -->
+                <div class="soft-skills-container" data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="section-heading">Soft Skills</h2>
+                    <div class="soft-skills-grid">
+                        <div class="soft-skill-card" data-aos="flip-left" data-aos-delay="100">
+                            <div class="soft-skill-front">
+                                <i class="fas fa-people-carry"></i>
+                                <h3>Team Work</h3>
+                            </div>
+                            <div class="soft-skill-back">
+                                <p>Collaborating effectively with diverse teams to achieve common goals and deliver successful projects.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="soft-skill-card" data-aos="flip-left" data-aos-delay="200">
+                            <div class="soft-skill-front">
+                                <i class="fas fa-brain"></i>
+                                <h3>Critical Thinking</h3>
+                            </div>
+                            <div class="soft-skill-back">
+                                <p>Analyzing problems from multiple perspectives to develop innovative and effective solutions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="soft-skill-card" data-aos="flip-left" data-aos-delay="300">
+                            <div class="soft-skill-front">
+                                <i class="fas fa-exchange-alt"></i>
+                                <h3>Adaptability</h3>
+                            </div>
+                            <div class="soft-skill-back">
+                                <p>Quickly adjusting to new technologies, methodologies, and changing project requirements.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="soft-skill-card" data-aos="flip-left" data-aos-delay="400">
+                            <div class="soft-skill-front">
+                                <i class="fas fa-clock"></i>
+                                <h3>Time Management</h3>
+                            </div>
+                            <div class="soft-skill-back">
+                                <p>Efficiently prioritizing tasks and meeting deadlines while maintaining high-quality work.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="soft-skill-card" data-aos="flip-left" data-aos-delay="500">
+                            <div class="soft-skill-front">
+                                <i class="fas fa-flag"></i>
+                                <h3>Leadership</h3>
+                            </div>
+                            <div class="soft-skill-back">
+                                <p>Guiding teams, making informed decisions, and taking initiative on projects.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="soft-skill-card" data-aos="flip-left" data-aos-delay="600">
+                            <div class="soft-skill-front">
+                                <i class="fas fa-puzzle-piece"></i>
+                                <h3>Problem Solving</h3>
+                            </div>
+                            <div class="soft-skill-back">
+                                <p>Identifying issues, analyzing root causes, and implementing effective solutions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="soft-skill-card" data-aos="flip-left" data-aos-delay="700">
+                            <div class="soft-skill-front">
+                                <i class="fas fa-comments"></i>
+                                <h3>Communication</h3>
+                            </div>
+                            <div class="soft-skill-back">
+                                <p>Clearly articulating ideas, actively listening, and effectively collaborating with team members and stakeholders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="section" data-aos="fade-up" data-aos-duration="800">
+            <div class="resume-container">
+                <div class="resume-header" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="resume-title">Resume</h2>
+                    <p class="resume-subtitle">My Professional Journey</p>
+                </div>
+                
+                <div class="resume-actions" data-aos="fade-up" data-aos-delay="200">
+                    <a href="SULIMANYOUSEF.pdf" target="_blank" class="resume-btn view-cv-btn modern-btn">
+                        <i class="fas fa-eye"></i>
+                        <span>View CV</span>
+                    </a>
+                    <a href="SULIMANYOUSEF.pdf" download class="resume-btn download-cv-btn modern-btn">
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </a>
+
+                </div>
+                
+                <!-- Education Section -->
+                <div class="resume-section" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="resume-section-title">
+                        <i class="fas fa-graduation-cap"></i> Education
+                    </h3>
+                    
+                    <div class="education-card-centered">
+                        <div class="education-header">
+                            <h4 class="education-title">Bachelor of Computer Science</h4>
+                            <span class="education-period">2020 - 2025</span>
+                        </div>
+                        <div class="education-institution">Taibah University</div>
+                        <div class="education-location">
+                            <i class="fas fa-map-marker-alt"></i> Madina - Saudi Arabia
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Certifications Section -->
+<div class="resume-section" data-aos="fade-up" data-aos-delay="400">
+    <h3 class="resume-section-title">
+        <i class="fas fa-certificate"></i> Certifications
+    </h3>
+    <ul class="cert-timeline">
+        <li class="cert-step" data-aos="fade-right" data-aos-delay="100">
+            <span class="cert-node"></span>
+            <div class="cert-card">
+                <h4 class="cert-title">Web Application Development</h4>
+                <span class="cert-meta">Doroob · 2025</span>
+                <p class="cert-desc">Web app development course with assessments and updated browser skills.</p>
+            </div>
+        </li>
+        <li class="cert-step" data-aos="fade-right" data-aos-delay="200">
+            <span class="cert-node"></span>
+            <div class="cert-card">
+                <h4 class="cert-title">Full Stack Web Developer</h4>
+                <span class="cert-meta">Satar · 2024</span>
+                <p class="cert-desc">HTML, CSS, JavaScript, Git, Node.js, Express, DOM, Bootstrap, MongoDB, API, React.</p>
+            </div>
+        </li>
+        <li class="cert-step" data-aos="fade-right" data-aos-delay="300">
+            <span class="cert-node"></span>
+            <div class="cert-card">
+                <h4 class="cert-title">Flutter App Developer (Full Course)</h4>
+                <span class="cert-meta">Satar · 2024</span>
+                <p class="cert-desc">Dart, Flutter 101-105.</p>
+            </div>
+        </li>
+        <li class="cert-step" data-aos="fade-right" data-aos-delay="400">
+            <span class="cert-node"></span>
+            <div class="cert-card">
+                <h4 class="cert-title">Android App Developer (Full Course)</h4>
+                <span class="cert-meta">Satar · 2022</span>
+                <p class="cert-desc">Kotlin 101-104, Android 101, SQL 101, Jetpack Compose, Android Firebase.</p>
+            </div>
+        </li>
+        <li class="cert-step" data-aos="fade-right" data-aos-delay="500">
+            <span class="cert-node"></span>
+            <div class="cert-card">
+                <h4 class="cert-title">Data Analysis Course</h4>
+                <span class="cert-meta">Satar · 2025</span>
+                <p class="cert-desc">SQL 101-103, Python 101-103, NumPy, Pandas, Power BI 101-103.</p>
+            </div>
+        </li>
+        <li class="cert-step" data-aos="fade-right" data-aos-delay="600">
+            <span class="cert-node"></span>
+            <div class="cert-card">
+                <h4 class="cert-title">Web Development Fundamentals</h4>
+                <span class="cert-meta">IBM · 2025</span>
+                <p class="cert-desc">HTML, CSS, JavaScript, web basics, and deployment.</p>
+            </div>
+        </li>
+        <li class="cert-step" data-aos="fade-right" data-aos-delay="700">
+            <span class="cert-node"></span>
+            <div class="cert-card">
+                <h4 class="cert-title">UI/UX Designer Using Figma</h4>
+                <span class="cert-meta">Satr · 2025</span>
+                <p class="cert-desc">UI/UX design principles using Figma.</p>
+            </div>
+        </li>
+        <li class="cert-step" data-aos="fade-right" data-aos-delay="800">
+            <span class="cert-node"></span>
+            <div class="cert-card">
+                <h4 class="cert-title">Artificial Intelligence Fundamentals</h4>
+                <span class="cert-meta">IBM · 2025</span>
+                <p class="cert-desc">AI concepts, machine learning, deep learning, NLP, computer vision, and AI ethics.</p>
+            </div>
+        </li>
+        <li class="cert-step" data-aos="fade-right" data-aos-delay="900">
+            <span class="cert-node"></span>
+            <div class="cert-card">
+                <h4 class="cert-title">Agile Explorers</h4>
+                <span class="cert-meta">IBM · 2025</span>
+                <p class="cert-desc">Foundational knowledge of Agile principles with practical application.</p>
+            </div>
+        </li>
+        <li class="cert-step" data-aos="fade-right" data-aos-delay="1000">
+            <span class="cert-node"></span>
+            <div class="cert-card">
+                <h4 class="cert-title">JavaScript (Basic)</h4>
+                <span class="cert-meta">HackerRank · 2025</span>
+                <p class="cert-desc">Functions, currying, hoisting, scope, inheritance, events and error handling.</p>
+            </div>
+        </li>
+    </ul>
+</div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="section" data-aos="fade-up" data-aos-duration="800">
+            <div class="services-container">
+                <div class="services-header" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="services-title">Services</h2>
+                    <p class="services-subtitle">Technology Solutions & Expertise</p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="service-title">Front-end Development</h3>
+                        <p class="service-description">Building responsive and interactive user interfaces using HTML, CSS, JavaScript, and React. Creating seamless user experiences with modern front-end technologies.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Responsive Design</li>
+                            <li><i class="fas fa-check"></i> Cross-Browser Compatibility</li>
+                            <li><i class="fas fa-check"></i> Performance Tuning</li>
+                            <li><i class="fas fa-check"></i> Accessibility</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="service-title">Backend Development</h3>
+                        <p class="service-description">Building robust and scalable server-side applications using Node.js and Express. Designing and developing RESTful APIs and managing databases with PostgreSQL for modern web applications.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> API Development</li>
+                            <li><i class="fas fa-check"></i> Database Design</li>
+                            <li><i class="fas fa-check"></i> Authentication & Authorization</li>
+                            <li><i class="fas fa-check"></i> Cloud Integration</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="service-title">Software Engineering</h3>
+                        <p class="service-description">Applying best practices to design, develop, test, and maintain reliable software systems. Emphasizing code quality, scalability, and maintainability throughout the development lifecycle.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Requirements Analysis</li>
+                            <li><i class="fas fa-check"></i> Software Architecture</li>
+                            <li><i class="fas fa-check"></i> Testing & QA</li>
+                            <li><i class="fas fa-check"></i> Version Control</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="service-title">UI/UX Design</h3>
+                        <p class="service-description">User-centered design solutions that combine aesthetics with functionality. From wireframes to high-fidelity prototypes.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> User Research</li>
+                            <li><i class="fas fa-check"></i> Wireframing</li>
+                            <li><i class="fas fa-check"></i> Prototyping</li>
+                            <li><i class="fas fa-check"></i> Design Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="section" data-aos="fade-up" data-aos-duration="800">
+            <div class="projects-container">
+                <div class="projects-header" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="projects-title">Projects</h2>
+                    <p class="projects-subtitle">Featured Work & Portfolio</p>
+                </div>
+                
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="img/HomePage.png" alt="Smart-life-organizer">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Smart-life-organizer</h3>
+                            <p class="project-description">An intelligent app to help users manage daily habits and organize time via reminders and voice interaction. Change your life by gradually adding new healthy habits and tasks.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">Dart</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">SQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Su03l/smartLiveOrganizer/tree/master" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://github.com/Su03l/smartLiveOrganizer/tree/master" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="project-image">
+                            <img src="img/project2.png" alt="Personal Profile">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Personal Profile</h3>
+                            <p class="project-description">This website is created to showcase my personal and professional projects, skills, and experience. It's a central hub for anyone interested in learning more about my work.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Javascript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://suliamanyousef.vercel.app/" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://github.com/Su03l/FinalProfile" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="img/Project2-1.png" alt="3Algorithims">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">3Algorithims</h3>
+                            <p class="project-description">A simple website with 3 encryption tools: Morse Code, ROT 13 Cipher, and Atbash Cipher for educational purposes.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://su03l.github.io/MorseRot13Atbash/" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://github.com/Su03l/MorseRot13Atbash" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="project-image">
+                            <img src="img/project4.png" alt="TaskHub">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">TaskHub</h3>
+                            <p class="project-description">TaskHub is a digital platform that helps undergraduate teams manage their graduation projects through task management, progress tracking, and team collaboration tools.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Javascript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://su03l.github.io/TaskHub/" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://github.com/Su03l/TaskHub" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <img src="img/project5.png" alt="TourismBusiness">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">TourismBusiness</h3>
+                            <p class="project-description">This website introduces our hotel, showcasing rooms, services, and facilities. Guests can explore amenities, view photos, and book online with ease.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://rightarm.vercel.app/" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://github.com/Su03l/TourismBusiness" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="350">
+                        <div class="project-image">
+                            <img src="img/project6.png" alt="projexhub">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">ProjexHub</h3>
+                            <p class="project-description">A website dedicated to showcasing graduation projects with interaction between students and supervisors. Platform for sharing and discovering academic projects.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://su03l.github.io/ProjexHubFinal/index.html" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://github.com/Su03l/ProjexHubFinal" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hidden Projects (Initially Hidden) -->
+                    <div class="project-card hidden" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-image">
+                            <img src="img/project7.png" alt="LinkTree">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">LinkTree</h3>
+                            <p class="project-description">This website lets you create a personalized page with multiple links to your social profiles, projects, and other important content—all in one place for easy sharing.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Javascript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://su03l.github.io/SulimanYousef-LinkTree/" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://github.com/Su03l/SulimanYousef-LinkTree" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card hidden" data-aos="fade-up" data-aos-delay="450">
+                        <div class="project-image">
+                            <img src="img/project8.png" alt="Dlni">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dlni Platform</h3>
+                            <p class="project-description">The platform aims to assist and guide pilgrims and Umrah performers to facilitate their internal routes to the Prophet's Mosque with maps and instant assistance services.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Javascript</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Su03l/dlni" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://github.com/Su03l/dlni" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card hidden" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-image">
+                                                        <img src="img/project9.png" alt="LawAiChat">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Law AI Chat</h3>
+                            <p class="project-description">This website provides AI-driven legal consultations and lets staff generate and print case reports and memos efficiently.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Javascript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://su03l.github.io/wayer1/" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://github.com/Su03l/wayer1" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card hidden" data-aos="fade-up" data-aos-delay="550">
+                        <div class="project-image">
+                            <img src="img/project10.png" alt="new project">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Genesis G90 Showcase</h3>
+                            <p class="project-description">Genesis G90 Showcase highlights the 2025 Genesis G90, featuring specs, photos, and videos. Users can contact the team and enjoy smooth navigation.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Javascript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://su03l.github.io/Genesis-G90-2025/" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://github.com/Su03l/Genesis-G90-2025" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card hidden" data-aos="fade-up" data-aos-delay="550">
+                        <div class="project-image">
+                            <img src="img/project11.png" alt="new project">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Test</h3>
+                            <p class="project-description">This for Test</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Javascript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="#" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 
+                    <div class="project-card hidden" data-aos="fade-up" data-aos-delay="550">
+                        <div class="project-image">
+                            <img src="img/project10.png" alt="new project">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Genesis G90 Showcase</h3>
+                            <p class="project-description">Genesis G90 Showcase highlights the 2025 Genesis G90, featuring specs, photos, and videos. Users can contact the team and enjoy smooth navigation.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Javascript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://su03l.github.io/Genesis-G90-2025/" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://github.com/Su03l/Genesis-G90-2025" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                     -->
+                </div>
+                
+                <!-- Show More Button -->
+                <div class="projects-toggle" data-aos="fade-up" data-aos-delay="600">
+                    <button id="show-more-btn" class="show-more-btn modern-btn">
+                        <span class="btn-text">Show More</span>
+                        <i class="fas fa-chevron-down btn-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section" data-aos="fade-up" data-aos-duration="800">
+            <div class="contact-container">
+                <div class="contact-header" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="contact-title">Contact</h2>
+                    <p class="contact-subtitle">Let's Connect & Create Something Amazing</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <a href="mailto:sulimany662@gmail.com">sulimany662@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <a href="https://wa.me/966590128804">+966 590 12 8804</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Location</h3>
+                                <p>Medina - Saudi Arabia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Twitter</h3>
+                                <a href="https://twitter.com/Su05l">@su05l</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-cta" data-aos="fade-left" data-aos-delay="300">
+                        <div class="cta-content">
+                            <h3>Ready to start a project?</h3>
+                            <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+                            <div class="cta-buttons">
+                                <a href="mailto:sulimany662@gmail.com" class="cta-btn modern-btn">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Send Email</span>
+                                </a>
+                                <a href="https://wa.me/966590128804" target="_blank" class="cta-btn modern-btn secondary">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- Column 1 -->
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="100">
+                    <div class="footer-logo">
+                        <a href="#home" class="footer-logo-link">
+                            <span class="footer-logo-text">SY</span>
+                        </a>
+                        <span class="full-name">Suliman Yousef</span>
+                    </div>
+                    <p class="footer-description">Software Engineer passionate about creating innovative digital solutions.</p>
+                    <div class="footer-social-icons">
+                        <a href="https://github.com/Su03l" target="_blank" class="footer-social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/suliaman-yousef-36265a320" target="_blank" class="footer-social-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/su05l" target="_blank" class="footer-social-icon">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://suliman-yousef-link-tree.vercel.app/" target="_blank" class="footer-social-icon">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Front-end Development</a></li>
+                        <li><a href="#services">Backend Development</a></li>
+                        <li><a href="#services">Software Engineering</a></li>
+                        <li><a href="#services">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Connect</h3>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            <a href="https://twitter.com/su05l" target="_blank">@su05l</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            <a href="mailto:sulimany662@gmail.com">sulimany662@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            <a href="tel:+966590128804">+966 59 012 8804</a>
+                            <span class="whatsapp-link">
+                                <a href="https://wa.me/966590128804" target="_blank" title="Contact on WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="footer-contact-text">Medina - Saudi Arabia</div>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p class="copyright">
-                        &copy; 2025 Suliman Yousef. All rights reserved.
-                    </p>
-                    <!-- <p class="footer-bottom-text">
-                        Made with <span class="heart">♥</span> by Suliman Yousef
-                    </p> -->
-                </div>
+                <p>© 2025 Suliman Yousef. All rights reserved.</p>
             </div>
-        </div>
-    </footer>
+        </footer>
+        
+        <!-- Scroll to Top Button -->
+        <button id="scrollToTop" class="scroll-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-    <div id="customAlert" class="custom-alert" style="display:none;">
-      <div class="custom-alert-content">
-        <button id="customAlertClose" class="custom-alert-close" aria-label="Close">&times;</button>
-        <div class="custom-alert-icon">
-          <i class="fas fa-info-circle"></i>
+        <!-- Animated Background (Only for Home) -->
+        <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
-        <span id="customAlertMessage"></span>
-      </div>
     </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
