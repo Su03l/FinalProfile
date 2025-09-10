@@ -409,24 +409,23 @@ body {
 
 /* FIXED: Word animation timing */
 @keyframes spin {
-  0%,
-  20% {
+  0%, 16% {
     transform: translateY(0%);
   }
-  25%,
-  45% {
+  20%, 32% {
     transform: translateY(-100%);
   }
-  50%,
-  70% {
+  36%, 48% {
     transform: translateY(-200%);
   }
-  75%,
-  95% {
+  52%, 64% {
     transform: translateY(-300%);
   }
-  100% {
+  68%, 80% {
     transform: translateY(-400%);
+  }
+  84%, 100% {
+    transform: translateY(-500%);
   }
 }
 
