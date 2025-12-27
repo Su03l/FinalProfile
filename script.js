@@ -225,7 +225,8 @@ function initProjectsToggle() {
       this.querySelector(".btn-icon").classList.remove("fa-chevron-down");
       this.querySelector(".btn-icon").classList.add("fa-chevron-up");
     } else {
-      this.querySelector(".btn-text").textContent = "Show All Projects (10)";
+      const hiddenCount = hiddenProjects.length;
+      this.querySelector(".btn-text").textContent = `Show All Projects (${hiddenCount})`;
       this.querySelector(".btn-icon").classList.remove("fa-chevron-up");
       this.querySelector(".btn-icon").classList.add("fa-chevron-down");
     }
@@ -277,14 +278,34 @@ function initProjectsFilter() {
       // Filter projects
       projectCards.forEach(card => {
         const category = card.getAttribute('data-category');
-        const isHidden = card.classList.contains('hidden-by-filter');
+        const wasOriginallyHidden = card.hasAttribute('data-originally-hidden');
 
-        if (filter === 'all' || category === filter) {
+        // Mark originally hidden cards on first run
+        if (!card.hasAttribute('data-originally-hidden')) {
+          if (card.classList.contains('hidden')) {
+            card.setAttribute('data-originally-hidden', 'true');
+          } else {
+            card.setAttribute('data-originally-hidden', 'false');
+          }
+        }
+
+        if (filter === 'all') {
+          // For 'all', show only non-originally-hidden cards
+          if (card.getAttribute('data-originally-hidden') === 'false') {
+            card.style.display = 'block';
+            card.classList.remove('hidden');
+          } else {
+            card.style.display = 'none';
+            card.classList.add('hidden');
+          }
+        } else if (category === filter) {
+          // Show if matches filter, even if originally hidden
           card.style.display = 'block';
-          card.classList.remove('hidden-by-filter');
+          card.classList.remove('hidden');
         } else {
+          // Hide if doesn't match
           card.style.display = 'none';
-          card.classList.add('hidden-by-filter');
+          card.classList.add('hidden');
         }
       });
 

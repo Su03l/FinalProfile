@@ -2173,6 +2173,63 @@ body.light-theme .filter-btn.active {
   transform: scale(1.1);
 }
 
+/* Project Image Placeholder */
+.project-image-placeholder {
+  background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image-placeholder::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.placeholder-icon {
+  font-size: 5rem;
+  color: white;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .placeholder-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Light Theme for Placeholder */
+body.light-theme .project-image-placeholder {
+  background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
+}
+
+/* Full Width Project Card */
+.project-card-full {
+  grid-column: 1 / -1;
+  max-width: 100%;
+}
+
 .project-content {
   padding: 2rem;
 }
