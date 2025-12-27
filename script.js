@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize projects toggle
   initProjectsToggle();
 
+  // Initialize projects filter
+  initProjectsFilter();
+
   // Smooth scrolling for navigation links
   initSmoothScrolling();
 });
@@ -229,6 +232,65 @@ function initProjectsToggle() {
 
     // Refresh AOS animations for newly visible projects
     AOS.refresh();
+  });
+}
+
+// Initialize projects filter functionality
+function initProjectsFilter() {
+  const projectCards = document.querySelectorAll('.project-card');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  // Auto-categorize projects based on tech stack
+  projectCards.forEach(card => {
+    // Skip if already has category
+    if (card.getAttribute('data-category')) return;
+
+    const techTags = Array.from(card.querySelectorAll('.tech-tag')).map(tag =>
+      tag.textContent.trim().toLowerCase()
+    );
+
+    const backendTechs = ['node js', 'express js', 'postgresql', 'php', 'laravel', 'fastapi', 'python', 'sql', 'mongodb'];
+    const frontendTechs = ['html', 'css', 'javascript', 'react', 'vue', 'angular', 'typescript', 'next js', 'tailwind', 'vite'];
+
+    const hasBackend = techTags.some(tech => backendTechs.some(backTech => tech.includes(backTech)));
+    const hasFrontend = techTags.some(tech => frontendTechs.some(frontTech => tech.includes(frontTech)));
+
+    let category = 'frontend';
+    if (hasBackend && hasFrontend) {
+      category = 'fullstack';
+    } else if (hasBackend) {
+      category = 'backend';
+    }
+
+    card.setAttribute('data-category', category);
+  });
+
+  // Filter functionality
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      const filter = this.getAttribute('data-filter');
+
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      // Filter projects
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const isHidden = card.classList.contains('hidden-by-filter');
+
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'block';
+          card.classList.remove('hidden-by-filter');
+        } else {
+          card.style.display = 'none';
+          card.classList.add('hidden-by-filter');
+        }
+      });
+
+      // Refresh AOS animations
+      AOS.refresh();
+    });
   });
 }
 

@@ -536,9 +536,29 @@
                     <p class="projects-subtitle">Featured Work & Portfolio</p>
                 </div>
                 
+                <!-- Filter Buttons -->
+                <div class="project-filter" data-aos="fade-up" data-aos-delay="200">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th"></i>
+                        <span>All Projects</span>
+                    </button>
+                    <button class="filter-btn" data-filter="frontend">
+                        <i class="fas fa-code"></i>
+                        <span>Frontend</span>
+                    </button>
+                    <button class="filter-btn" data-filter="backend">
+                        <i class="fas fa-server"></i>
+                        <span>Backend</span>
+                    </button>
+                    <button class="filter-btn" data-filter="fullstack">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Frontend and Backend</span>
+                    </button>
+                </div>
+                
                 <div class="projects-grid" id="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Project 1: Smart-life-organizer - Fullstack (Flutter + Python/FastAPI) -->
+                    <div class="project-card" data-category="fullstack" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-image">
                             <img src="img/HomePage.png" alt="Smart-life-organizer">
                         </div>
@@ -565,8 +585,8 @@
                         </div>
                     </div>
                     
-                    <!-- Project 2 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+                    <!-- Project 2: Personal Profile - Frontend (HTML/CSS/JS) -->
+                    <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="150">
                         <div class="project-image">
                             <img src="img/project2.png" alt="Personal Profile">
                         </div>
@@ -590,8 +610,8 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Project 2 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+                    <!-- Project 3: OS Profile - Frontend (React/TypeScript) -->
+                    <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="150">
                         <div class="project-image">
                             <img src="img/suliman-os.png" alt="Personal Profile">
                         </div>
@@ -619,8 +639,8 @@
                         </div>
                     </div>
                     
-                    <!-- Project 3 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Project 4: 3Algorithims - Frontend (HTML/CSS/JS) -->
+                    <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-image">
                             <img src="img/Project2-1.png" alt="3Algorithims">
                         </div>
@@ -645,8 +665,8 @@
                         </div>
                     </div>
                     
-                    <!-- Project 4 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="250">
+                    <!-- Project 5: TaskHub - Frontend (HTML/CSS/JS) -->
+                    <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="250">
                         <div class="project-image">
                             <img src="img/Project4.png" alt="TaskHub">
                         </div>
@@ -671,8 +691,8 @@
                         </div>
                     </div>
                     
-                    <!-- Project 5 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Project 6: TourismBusiness - Frontend (React/TypeScript) -->
+                    <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="300">
                         <div class="project-image">
                             <img src="img/Project5.png" alt="TourismBusiness">
                         </div>
@@ -699,8 +719,8 @@
                         </div>
                     </div>
                     
-                    <!-- Project 6 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="350">
+                    <!-- Project 7: ProjexHub - Frontend (React/TypeScript) -->
+                    <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="350">
                         <div class="project-image">
                             <img src="img/projexhub.png" alt="projexhub">
                         </div>
@@ -728,7 +748,8 @@
                     </div>
                     
                     <!-- Hidden Projects (Initially Hidden) -->
-                    <div class="project-card hidden" data-aos="fade-up" data-aos-delay="400">
+                    <!-- Project 8: LinkTree - Frontend (HTML/CSS/JS) -->
+                    <div class="project-card hidden" data-category="frontend" data-aos="fade-up" data-aos-delay="400">
                         <div class="project-image">
                             <img src="img/Project7.png" alt="LinkTree">
                         </div>
@@ -753,7 +774,8 @@
                         </div>
                     </div>
                     
-                    <div class="project-card hidden" data-aos="fade-up" data-aos-delay="450">
+                    <!-- Project 9: Dlni Platform - Frontend (React/TypeScript) -->
+                    <div class="project-card hidden" data-category="frontend" data-aos="fade-up" data-aos-delay="450">
                         <div class="project-image">
                             <img src="img/Project8.png" alt="Dlni">
                         </div>
@@ -780,7 +802,8 @@
                         </div>
                     </div>
                     
-                    <div class="project-card hidden" data-aos="fade-up" data-aos-delay="500">
+                    <!-- Project 10: Law AI Chat - Frontend (HTML/CSS/JS) -->
+                    <div class="project-card hidden" data-category="frontend" data-aos="fade-up" data-aos-delay="500">
                         <div class="project-image">
                             <img src="img/Project9.png" alt="LawAiChat">
                         </div>
@@ -933,7 +956,8 @@
                             </div>
                         </div>
                     </div>
-                     <div class="project-card hidden" data-aos="fade-up" data-aos-delay="550">
+                     <!-- Project16: Generate Cards - Frontend (Next.js/React/TypeScript) -->
+                     <div class="project-card hidden" data-category="frontend" data-aos="fade-up" data-aos-delay="550">
                         <div class="project-image">
                             <img src="img/gen-crad.png" alt="new project">
                         </div>
@@ -1154,6 +1178,36 @@
                                     <span>View Live</span>
                                 </a>
                                 <a href="https://github.com/Su03l/Developers-Station" target="_blank" class="project-link modern-btn">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card hidden" data-aos="fade-up" data-aos-delay="550">
+                        <div class="project-image">
+                            <img src="img/rsl.png" alt="new project">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">RSL</h3>
+                            <p class="project-description"> A secure, modern messaging app for Arab users with full Arabic support and a sleek interface.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Typescript</span>
+                                <span class="tech-tag">TailwindCSS</span>
+                                <span class="tech-tag">Supabase</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Su03l/Developers-Station" target="_blank" class="project-link modern-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live</span>
+                                </a>
+                                <a href="https://rsl-chat.vercel.app/" target="_blank" class="project-link modern-btn">
                                     <i class="fab fa-github"></i>
                                     <span>View Code</span>
                                 </a>
