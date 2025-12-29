@@ -3336,3 +3336,381 @@ body.light-theme .footer-bottom {
     margin-top: 0.5rem;
   }
 }
+
+/* ===================================
+   ENHANCED BACKEND SECTION STYLES
+   =================================== */
+
+.backend-enhanced {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.backend-enhanced::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #007aff 0%, #00d4ff 100%);
+}
+
+/* Backend Header */
+.backend-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 122, 255, 0.1) 0%,
+    rgba(0, 122, 255, 0.05) 100%
+  );
+  border-bottom: 1px solid rgba(0, 122, 255, 0.2);
+}
+
+.backend-icon-wrapper {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+.backend-icon-wrapper i {
+  font-size: 2.5rem;
+  color: white;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.backend-header-text {
+  flex: 1;
+}
+
+.backend-header-text .project-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.backend-subtitle {
+  margin: 0;
+  color: #b3b3b3;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Backend Projects List */
+.backend-projects-list {
+  padding: 2rem 2.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Backend Project Item */
+.backend-project-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.backend-project-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #007aff 0%, #00d4ff 100%);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: top;
+}
+
+.backend-project-item:hover::before {
+  transform: scaleY(1);
+}
+
+.backend-project-item:hover {
+  background: rgba(0, 122, 255, 0.05);
+  border-color: rgba(0, 122, 255, 0.3);
+  transform: translateX(8px);
+  box-shadow: 0 8px 24px rgba(0, 122, 255, 0.15);
+}
+
+/* Project Number */
+.project-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(0, 122, 255, 0.3);
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.backend-project-item:hover .project-number {
+  color: #007aff;
+  transform: scale(1.1);
+}
+
+/* Project Icon */
+.project-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 122, 255, 0.1) 0%,
+    rgba(0, 122, 255, 0.05) 100%
+  );
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.project-icon i {
+  font-size: 1.5rem;
+  color: #007aff;
+  transition: all 0.3s ease;
+}
+
+.backend-project-item:hover .project-icon {
+  background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
+  border-color: #007aff;
+  box-shadow: 0 8px 16px rgba(0, 122, 255, 0.3);
+  transform: rotate(5deg) scale(1.1);
+}
+
+.backend-project-item:hover .project-icon i {
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Project Info */
+.project-info {
+  min-width: 0;
+}
+
+.project-name {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.backend-project-item:hover .project-name {
+  color: #007aff;
+}
+
+.project-desc {
+  margin: 0;
+  color: #b3b3b3;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Project GitHub Button */
+.project-github-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 122, 255, 0.1);
+  border: 1px solid rgba(0, 122, 255, 0.3);
+  border-radius: 10px;
+  color: #007aff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+
+.project-github-btn i {
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.project-github-btn:hover {
+  background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
+  border-color: #007aff;
+  color: white;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(0, 122, 255, 0.4);
+}
+
+.project-github-btn:hover i {
+  transform: scale(1.1);
+}
+
+/* Backend Footer */
+.backend-footer {
+  padding: 2rem 2.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 122, 255, 0.1);
+}
+
+.backend-footer .project-technologies {
+  margin-bottom: 1.5rem;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+.backend-footer .project-links {
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+/* Responsive Design for Backend Section */
+@media (max-width: 768px) {
+  .backend-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .backend-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .backend-icon-wrapper i {
+    font-size: 2rem;
+  }
+
+  .backend-header-text .project-title {
+    font-size: 1.5rem;
+  }
+
+  .backend-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .backend-projects-list {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .backend-project-item {
+    grid-template-columns: auto auto 1fr auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .project-number {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    font-size: 1.5rem;
+    align-self: center;
+  }
+
+  .project-icon {
+    grid-column: 2;
+    grid-row: 1;
+    width: 40px;
+    height: 40px;
+  }
+
+  .project-icon i {
+    font-size: 1.2rem;
+  }
+
+  .project-info {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+  .project-github-btn {
+    grid-column: 4;
+    grid-row: 1 / 3;
+    width: 38px;
+    height: 38px;
+  }
+
+  .project-github-btn i {
+    font-size: 1.1rem;
+  }
+
+  .project-name {
+    font-size: 1.1rem;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+  }
+
+  .backend-footer {
+    padding: 1.5rem;
+  }
+
+  .backend-footer .project-technologies {
+    justify-content: center;
+  }
+
+  .backend-footer .project-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .backend-footer .project-links .modern-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .backend-project-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .project-number {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-icon {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0 auto 0.5rem;
+  }
+
+  .project-info {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .project-github-btn {
+    grid-column: 1;
+    grid-row: 4;
+    margin: 0.75rem auto 0;
+  }
+}
