@@ -1,0 +1,250 @@
+/* Enhanced Contact Section Styles */
+#contact {
+  position: relative;
+  overflow: hidden;
+}
+
+#contact::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 122, 255, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: floatBackground 20s ease-in-out infinite;
+}
+
+@keyframes floatBackground {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-100px, -100px);
+  }
+}
+
+.contact-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 122, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.contact-item:hover::before {
+  left: 100%;
+}
+
+.contact-item:hover {
+  background: rgba(0, 122, 255, 0.05);
+  transform: translateX(10px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.15);
+}
+
+.contact-icon {
+  position: relative;
+}
+
+.contact-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: rgba(0, 122, 255, 0.2);
+  border-radius: 50%;
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.contact-item:hover .contact-icon::after {
+  width: 120%;
+  height: 120%;
+}
+
+.contact-item:hover .contact-icon {
+  background: rgba(0, 122, 255, 0.2);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.contact-item:hover .contact-icon i {
+  color: #00d4ff;
+  transform: scale(1.1);
+}
+
+.contact-details h3 {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover .contact-details h3 {
+  color: #007aff;
+  transform: translateX(5px);
+}
+
+.contact-details a,
+.contact-details p {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover .contact-details a {
+  color: #007aff;
+  transform: translateX(5px);
+}
+
+/* Enhanced CTA Section */
+.contact-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cta::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 122, 255, 0.05) 50%,
+    transparent 70%
+  );
+  animation: rotateShineCTA 8s linear infinite;
+}
+
+@keyframes rotateShineCTA {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content h3 {
+  background: linear-gradient(135deg, #ffffff 0%, #007aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.cta-content p {
+  color: #b3b3b3;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.cta-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.cta-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 122, 255, 0.4);
+}
+
+.cta-btn i {
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover i {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Light Theme Adjustments */
+body.light-theme .contact-item:hover {
+  background: rgba(0, 122, 255, 0.08);
+}
+
+body.light-theme .cta-content h3 {
+  background: linear-gradient(135deg, #1a1a1a 0%, #007aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-item:hover {
+    transform: translateX(5px) scale(1.01);
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
