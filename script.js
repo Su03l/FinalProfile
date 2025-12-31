@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Smooth scrolling for navigation links
   initSmoothScrolling();
+
+  // Initialize mouse spotlight effect
+  initMouseSpotlight();
 });
 
 // Simulate loader progress
@@ -344,4 +347,48 @@ function initSmoothScrolling() {
 function closeAlert() {
   const alert = document.getElementById("contact-alert");
   alert.classList.remove("show");
+}
+
+// Initialize mouse spotlight effect
+function initMouseSpotlight() {
+  const spotlight = document.getElementById('mouseSpotlight');
+  const homeSection = document.getElementById('home');
+
+  if (!spotlight || !homeSection) return;
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let spotlightX = 0;
+  let spotlightY = 0;
+
+  // Track mouse movement
+  homeSection.addEventListener('mousemove', (e) => {
+    const rect = homeSection.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+
+    // Show spotlight
+    spotlight.classList.add('active');
+  });
+
+  // Hide spotlight when mouse leaves
+  homeSection.addEventListener('mouseleave', () => {
+    spotlight.classList.remove('active');
+  });
+
+  // Smooth animation frame for spotlight movement
+  function updateSpotlight() {
+    // Smooth easing for spotlight position
+    const easing = 0.15;
+    spotlightX += (mouseX - spotlightX) * easing;
+    spotlightY += (mouseY - spotlightY) * easing;
+
+    spotlight.style.left = `${spotlightX}px`;
+    spotlight.style.top = `${spotlightY}px`;
+
+    requestAnimationFrame(updateSpotlight);
+  }
+
+  // Start animation loop
+  updateSpotlight();
 }
