@@ -354,24 +354,12 @@ body {
 
 .particle {
   position: absolute;
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   background: rgba(0, 122, 255, 0.8);
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 212, 255, 1), 0 0 30px rgba(0, 122, 255, 0.6);
+  box-shadow: 0 0 10px rgba(0, 122, 255, 1), 0 0 20px rgba(0, 122, 255, 0.5);
   animation: floatParticle 20s linear infinite;
-}
-
-.particle:nth-child(odd) {
-  background: rgba(0, 212, 255, 0.8);
-  box-shadow: 0 0 15px rgba(0, 255, 191, 1), 0 0 30px rgba(0, 212, 255, 0.6);
-}
-
-.particle:nth-child(3n) {
-  background: rgba(138, 43, 226, 0.7);
-  box-shadow: 0 0 15px rgba(186, 85, 211, 1), 0 0 30px rgba(138, 43, 226, 0.6);
-  width: 6px;
-  height: 6px;
 }
 
 /* Different positions and delays for particles */
