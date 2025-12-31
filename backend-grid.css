@@ -8,7 +8,7 @@
   );
   border: 1px solid rgba(0, 122, 255, 0.2);
   border-radius: 20px;
-  padding: 3rem;
+  padding: 4rem;
   transition: all 0.4s ease;
 }
 
@@ -75,8 +75,9 @@
 .backend-projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
   margin-bottom: 3rem;
+  padding: 1rem;
 }
 
 .backend-project-card {
@@ -87,7 +88,7 @@
   );
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 15px;
-  padding: 2rem;
+  padding: 2.5rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -236,6 +237,14 @@
   }
 
   .backend-projects-section {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 2rem;
+  }
+
+  .backend-projects-grid {
+    gap: 1.5rem;
+  }
+
+  .backend-project-card {
+    padding: 2rem;
   }
 }
